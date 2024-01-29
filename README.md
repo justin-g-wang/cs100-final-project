@@ -12,7 +12,7 @@
 > * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
 
 ## Project Description
- >  	The reason why we are doing this project is because every one of us in this group listens to music daily. However, we thought that if you just listen to your self-created playlist over and over again many times, it can get boring. So we thought it would be a cool idea to create a program in which it can recommend songs based on what kind of music you have been listening to. It will be sort of like the Spotify-recommended songs. The language we will code in is C++.
+ > * The reason why we are doing this project is because every one of us in this group listens to music daily. However, we thought that if you just listen to your self-created playlist over and over again many times, it can get boring. So we thought it would be a cool idea to create a program in which it can recommend songs based on what kind of music you have been listening to. It will be sort of like the Spotify-recommended songs. The language we will code in is C++.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
  > * What will be the input/output of your project?
  > * What are the features that the project provides?
