@@ -13,7 +13,7 @@
 
 ## Project Description
  > * Why is it important or interesting to you?
- > This project is interesting to us since every one of us in the group listens to music on a daily basis. However, we realized that if you listen to your self-created playlist over and over , it can get quite repetitive and boring. So what if we could create a program which could recommend us songs based on what we like and popular genres we normally listen to , thus providing us a new enjoyable playlist whenever we want.
+ > This project is interesting to us since every one of us in the group listens to music on a daily basis. However, we realized that if you listen to your self-created playlist over and over , it can get quite repetitive and boring. So what if we could create a program which could recommend us songs based on what we like and popular genres we normally listen to , thus providing us a new enjoyable playlist whenever we want. 
  > * What languages/tools/technologies do you plan to use?
  > In developing SoundNotes, our music discovery app, we're using C++. We're incorporating machine learning for personalized music recommendations, using the Shark library for its straightforward functionality. For audio processing, we've chosen the BASS library to analyze and process music tracks effectively. Our user interface is being designed with Qt, focusing on simplicity and user-friendliness. We're also utilizing GitHub for version control and collaboration. Lastly, integrating the Spotify Web API is key for accessing a wide range of music and metadata, crucial for our app's recommendation feature. 
  > * What will be the input/output of your project?
