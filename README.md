@@ -1,4 +1,4 @@
-# \<SoundNotes\>
+# \<SoundNotes - A Music Discovery App For Enthusiasts.\>
  
  > Authors: \<[Aakif Iqbal](https://github.com/aakifiq)\>, \<[Justin Wang](https://github.com/justin-g-wang)\>, \<[Hassan Fawaz](https://github.com/HassanMFawaz)\>, \<[Fasil Eshetu](https://github.com/feshe001)\>
 
