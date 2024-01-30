@@ -14,8 +14,8 @@
 ## Project Description
  > * The reason why we are doing this project is because every one of us in this group listens to music daily. However, we thought that if you just listen to your self-created playlist over and over again many times, it can get boring. So we thought it would be a cool idea to create a program in which it can recommend songs based on what kind of music you have been listening to. It will be sort of like the Spotify-recommended songs. The language we will code in is C++. We will also be using Web API which is metadata from Spotify content.
  > * What will be the input/output of your project?
- > * What are the features that the project provides?
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
+ > * Song Notes is a music discovery app. It organizes songs and albums into genres and subgenres, simplifying your search for preferred music. Its standout feature is a recommendation system: input a favorite song or artist, and you'll get a list of similar music, using algorithms considering genre, artist, and album. Additionally, you can search music by artist and genre, or filter by release date or popularity. A key aspect of Song Notes is its rating system, where users can rate songs and albums. This helps refine your future recommendations.
+ > 
  > 
  > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  > ## Phase II
