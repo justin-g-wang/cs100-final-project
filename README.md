@@ -20,9 +20,6 @@
   The input will be the user’s personal information in order for them to create a profile. This will include first and last name, date of birth, username and password. The user can also enter the name of a song, genres, artists, albums, release date, and even popularity to find specific songs. They will also be able to rate a song between 0.0 - 10.0 The output will be the user having their own custom profile which has a diary of past ratings for all the songs or albums they have rated. They will see a graph showing their rating between 0.0 - 10.0 for all songs or albums. Furthermore, they will see a list of songs and albums based on their recommendations.
   * What are the features that the project provides?
   Song Notes is a music discovery app. It organizes songs and albums into genres and subgenres, simplifying your search for preferred music. Its standout feature is a recommendation system: input a favorite song or artist, and you'll get a list of similar music, using algorithms considering genre, artist, and album. Additionally, you can search music by artist and genre, or filter by release date or popularity. A key aspect of Song Notes is its rating system, where users can rate songs and albums. The ratings you give to songs will adjust future recommendations. It will aslo include a login system, where the user can login into his own profile where all his past rating amd recommendations will be stored.
- > 
- > 
- > You also need to set up an empty project board using GitHub projects (board view with default columns). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added. All columns should be in the right order.
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
