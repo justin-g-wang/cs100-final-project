@@ -39,8 +39,10 @@
 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
-
+### Class Diagram
 [Untitled drawing.pdf](https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/files/14255946/Untitled.drawing.pdf)
+* The main class that we will be using is the User Account class. This is because everything that we are doing starts from the user's account. They create their log in information and set it from the beginning. From there on, they are able to make ratings, a diary, and change settings. The ratings and diary class are derived classes from user Account. They will take the user information and using that, the user is able to set ratings for songs, albums, and artists. When the user sets these ratings, it will go into a diary which keeps tracks of all the things they have rated. The diary will also recommend them songs, artists, and albums based on their ratings. 
+
 
  
  > ## Phase III
