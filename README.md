@@ -29,12 +29,11 @@ https://drive.google.com/file/d/13ZGPLVQwXzsvixa0AvmvoHHTO-zG-gg3/view?usp=shari
 Upon opening the website, users will have to log in or create an account using their personal information if they don’t have one. Once they've logged in, they will be brought to the main page where they can use the search feature, add a new rating or view their account. If they decide to click search they will be able to freely browse the songs, albums, and artists along with their respective information (release date, genre, album cover, artist portrait, etc.). If they decide to add a rating, they will use the search feature to find the media they would like to rate and rate it on a scale of 0.0 to 10.0. They will also be given the option to write a review. If they choose to view their account, they will be met with their media rating graph, media recommendations, the option to view their media diary, and the settings option. If they choose to view their media diary, they will be prompted to select which of the three medias they would like to see a diary of (song, album, artist). Once they select the media, they will see a list of images pertaining to the media they selected alongside the ratings they have given them. If they decide to go to the settings, they will have the option to edit their information or log out. If they log out, they will be brought back to the opening website screen.
 
 ### Class Diagram
-[Class Diagram.pdf](https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/files/14256026/Class.Diagram.pdf)
-
-* The main class that we will be using is the User Account class. This is because everything that we are doing starts from the user's account. They create their log in information and set it from the beginning. From there on, they are able to make ratings, a diary, and change settings. The ratings and diary class are derived classes from user Account. They will take the user information and using that, the user is able to set ratings for songs, albums, and artists. When the user sets these ratings, it will go into a diary which keeps tracks of all the things they have rated. The diary will also recommend them songs, artists, and albums based on their ratings. 
+<img width="558" alt="image" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/127655051/0b2cc173-a9df-4c48-b4cc-7b0a311e6bcb">
 
 
- 
+* The  superclass that we will be using is the Logging in class. This is because everything that we are doing starts from Logging in. They create their log in information and set it from the beginning. From there on, they are able to make use their account to access ratings, a diary, and change settings. The ratings and diary class cannot exist without a user Account. In the diary class, users will be able to set their ratings when they access diary which will store their ratings.
+
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
  
