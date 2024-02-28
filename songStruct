@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+struct Song 
+{
+    std::string artist;
+    std::string albumName;
+    std::string songName;
+    int popularity;
+    std::string genre;
+};
