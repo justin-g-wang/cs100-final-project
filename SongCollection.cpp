@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <iostream>
 
+
 // Reads The Song From A Vector And Puts It Into The Song Vector
 void SongCollection::readSongsFromCSV(const std::string& filename) 
 {
@@ -16,6 +17,7 @@ void SongCollection::readSongsFromCSV(const std::string& filename)
     std::string line;
    // Skip Header Of CSV File
     std::getline(file, line);
+
     while (std::getline(file, line)) 
     {
         std::stringstream in(line);
@@ -30,12 +32,7 @@ void SongCollection::readSongsFromCSV(const std::string& filename)
     }
 }
 
-void SongCollection::printSongs() const {
-    for (const Song& song : songs) {
-        std::cout << "Artist: " << song.artist
-                  << ", Album: " << song.albumName
-                  << ", Song: " << song.songName
-                  << ", Popularity: " << song.popularity
-                  << ", Genre: " << song.genre << std::endl;
-    }
+std::vector<Song>& SongCollection::getSongs() 
+{
+    return songs;
 }
