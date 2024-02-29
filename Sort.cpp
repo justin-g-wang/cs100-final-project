@@ -1,5 +1,7 @@
 #include "Sort.h"
 #include <iostream>
+#include <string>
+#include <cstring>
 #include <algorithm>
 #include <limits>
 
@@ -85,7 +87,7 @@ void Sort::sortBySongName(SongCollection& collection)
     }
 
     if (!found) {
-        std::cout << "No songs found for artist: " << songName << std::endl;
+        std::cout << "No songs found for name: " << songName << std::endl;
     }
 }
 
@@ -96,6 +98,32 @@ void Sort::sortByPopularity(SongCollection& collection)
 }
 
 void Sort::sortByGenre(SongCollection& collection) 
-{
+{   
+    std::string genre ;
+    std::cout << "Sorting by Genre" << std::endl;
+    std::cout << "Enter A Genre: ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, genre); 
+
+    auto& songs = collection.getSongs();
+    bool found = false;
+    int counter = 0;
+    for (const auto& song : songs) 
+    {
+
+        if (song.genre == genre + "\r")
+        {
+            found = true;
+            std::cout << "Artist: " << song.artist
+                      << ", Album: " << song.albumName
+                      << ", Song: " << song.songName
+                      << ", Popularity: " << song.popularity
+                      << ", Genre: " << song.genre << std::endl;
+        }
+    }
+
+    if (!found) {
+        std::cout << "No songs found for Genre: " << genre << std::endl;
+    }
     std::cout << "Sorting by Genre" << std::endl;
 }
