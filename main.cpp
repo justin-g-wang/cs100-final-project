@@ -1,9 +1,12 @@
 #include "SongCollection.h"
+#include "Sort.h"
 
 int main() {
-    SongCollection mySongCollection;
-    mySongCollection.readSongsFromCSV("NoNumberingDataSet.csv");
-    mySongCollection.printSongs();
+    SongCollection myCollection;
+    myCollection.readSongsFromCSV("NoNumberingDataSet.csv");
 
-    return 0; 
+    Sort sorter; // Create an instance of Sort
+    sorter.promptAndSort(myCollection); // Call the member function on the instance
+
+    return 0;
 }

@@ -1,10 +1,16 @@
+#ifndef SONG_H
+#define SONG_H
+
 #include <iostream>
 #include <vector>
 #include <fstream>
 #include <sstream>
 #include <algorithm>
 
-struct Song {
+struct Song 
+{
+
+    
     std::string artist;
     std::string albumName;
     std::string songName;
@@ -13,3 +19,6 @@ struct Song {
 
     Song(const std::string& artist, const std::string& albumName, const std::string& songName, const std::string& popularity, const std::string& genre);
 };
+
+
+#endif // SONG_H
