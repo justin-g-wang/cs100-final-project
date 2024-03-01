@@ -47,20 +47,6 @@ void Sort::promptAndSort(SongCollection& collection)
             }
         }
     }
-    /*switch(userChoice) {
-        case 1: sortByArtist(collection); 
-        break;
-        case 2: sortByAlbumName(collection);
-         break;
-        case 3: sortBySongName(collection); 
-        break;
-        case 4: sortByPopularity(collection); 
-        break;
-        case 5: sortByGenre(collection); 
-        break;
-        default: std::cerr << "Invalid choice" << std::endl;
-    } 
-}*/
 
   void Sort::sortByArtist(SongCollection& collection) 
   {
@@ -122,11 +108,34 @@ void Sort::sortBySongName(SongCollection& collection)
     }
 }
 
-
 void Sort::sortByPopularity(SongCollection& collection) 
 {
+    std::string PopularityInt;
     std::cout << "Sorting by Popularity" << std::endl;
-    
+    std::cout << "Enter A Popularity (from 0 - 75): ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, PopularityInt);
+
+    auto& songs = collection.getSongs();
+    bool found = false;
+
+    for (const auto& song : songs) 
+    {
+
+        if (song.popularity == PopularityInt) 
+        {
+            found = true;
+            std::cout << "Artist: " << song.artist
+                      << ", Album: " << song.albumName
+                      << ", Song: " << song.songName
+                      << ", Popularity: " << song.popularity
+                      << ", Genre: " << song.genre << std::endl;
+        }
+    }
+
+    if (!found) {
+        std::cout << "No songs found for popularity: " << PopularityInt << std::endl;
+    }
 }
 
 void Sort::sortByGenre(SongCollection& collection) 
