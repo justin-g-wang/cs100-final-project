@@ -35,7 +35,8 @@ Upon opening the website, users will have to log in or create an account using t
 * The  superclass that we will be using is the Logging in class. This is because everything that we are doing starts from Logging in. They create their log in information and set it from the beginning. From there on, they are able to make use their account to access ratings, a diary, and change settings. The ratings and diary class cannot exist without a user Account. In the diary class, users will be able to set their ratings when they access diary which will store their ratings.
 
  > ## Phase III
- [Uploading SoundNotes_1.drawio…]()
+<img width="677" alt="image" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/127655051/87d7d602-9b94-4a09-ae86-1e81170d06ec">
+
 
 
  
