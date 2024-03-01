@@ -2,7 +2,9 @@
 #include <fstream>
 
 void UserLogin::registerUsers(const std::string& username, const std::string& password) {
-    if (users.find(username) != users.end()) {
+
+    if (users.find(username) != users.end()) 
+    {
         std::cout << "User Already Exists" << std::endl;
         return;
     }
@@ -13,7 +15,9 @@ void UserLogin::registerUsers(const std::string& username, const std::string& pa
 
 bool UserLogin::loginUser(const std::string& username, const std::string& password) {
     auto it = users.find(username);
-    if (it != users.end() && it->second == password) {
+
+    if (it != users.end() && it->second == password) 
+    {
         std::cout << "Login Successful" << std::endl;
         return true;
     }

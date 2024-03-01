@@ -7,8 +7,8 @@ bool askForUserLogin::promptUser()
     UserLogin loginSystem;
     bool loginSuccess = false; 
 
-    std::cout << "If You Are A New User Click 1" << std::endl;
-    std::cout << "If You Already Have An Account Click 2" << std::endl;
+    std::cout << "Click One If You Would Like To Create An Account" << std::endl;
+    std::cout << "Click Two If You Already Have An Accoutant" << std::endl;
     std::cin >> userInput;
 
     loginSystem.loadUsersFromFile();
@@ -30,7 +30,9 @@ bool askForUserLogin::promptUser()
         std::cin >> password;
 
         loginSuccess = loginSystem.loginUser(username, password);
-    } else {
+    } 
+    else 
+    {
         std::cout << "Invalid Option Selected" << std::endl;
     }
 

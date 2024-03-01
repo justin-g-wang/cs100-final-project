@@ -4,16 +4,20 @@
 #include "askForUserLogin.h"
 
 int main() {
+
     askForUserLogin userLoginPrompt;
     bool loginWasSuccessful = userLoginPrompt.promptUser();
-
-    if (loginWasSuccessful) {
+    
+    if (loginWasSuccessful) 
+    {
         SongCollection myCollection;
         myCollection.readSongsFromCSV("NoNumberingDataSet.csv");
         Sort sorter;
         sorter.promptAndSort(myCollection);
-    } else {
-        std::cout << "Access denied." << std::endl;
+    } 
+    else 
+    {
+        std::cout << "Access Denied." << std::endl;
     }
 
     return 0;
