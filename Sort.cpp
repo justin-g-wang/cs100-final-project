@@ -75,9 +75,31 @@ void Sort::promptAndSort(SongCollection& collection)
         std::cout << "No songs found for artist: " << inputArtist << std::endl;
     }
 }
-void Sort::sortByAlbumName(SongCollection& collection) 
-{
+void Sort::sortByAlbumName(SongCollection& collection) {
+    std::string albumName;
     std::cout << "Sorting by Album Name" << std::endl;
+    std::cout << "Enter An Album Name: ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, albumName);
+
+    auto& songs = collection.getSongs();
+    bool found = false;
+    for (const auto& song : songs) 
+    {
+        if (song.albumName == albumName) 
+        {
+            found = true;
+            std::cout << "Artist: " << song.artist
+                      << ", Album: " << song.albumName
+                      << ", Song: " << song.songName
+                      << ", Popularity: " << song.popularity
+                      << ", Genre: " << song.genre << std::endl;
+        }
+    }
+
+    if (!found) {
+        std::cout << "No songs found for album: " << albumName << std::endl;
+    }
 }
 
 void Sort::sortBySongName(SongCollection& collection) 
