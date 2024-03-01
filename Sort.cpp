@@ -20,8 +20,8 @@ void Sort::promptAndSort(SongCollection& collection)
                       << "5. Genre\n"
                       << "6. Quit\n";
             std::cin >> userChoice;
-
-            if (userChoice == "6") {
+            
+             if (userChoice == "6") {
                 break;
             }
 
