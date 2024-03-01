@@ -116,10 +116,26 @@ void Sort::sortBySongName(SongCollection& collection)
     }
 }
 
+bool rankCompare(const Song &first, const Song &second) {
+    return first.popularity > second.popularity;
+}
 
-void Sort::sortByPopularity(SongCollection& collection) 
-{
+void Sort::sortByPopularity(SongCollection& collection) {
     std::cout << "Sorting by Popularity" << std::endl;
+
+    // make a copy of the vector being passed in
+    auto& copiedSongs = collection.getSongs();
+
+    //call sort on vector copied. Use the comparing function to override the default sort operator
+    sort(copiedSongs.begin(), copiedSongs.end(), rankCompare);
+
+    for (const auto& song : copiedSongs) {
+        std::cout << "Artist: " << song.artist
+                << ", Album: " << song.albumName
+                << ", Song: " << song.songName
+                << ", Popularity: " << song.popularity
+                << ", Genre: " << song.genre << std::endl;
+    }
 }
 
 void Sort::sortByGenre(SongCollection& collection) 
