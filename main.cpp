@@ -1,12 +1,24 @@
 #include "SongCollection.h"
 #include "Sort.h"
+#include "UserLogin.h"
+#include "askForUserLogin.h"
 
 int main() {
-    SongCollection myCollection;
-    myCollection.readSongsFromCSV("NoNumberingDataSet.csv");
 
-    Sort sorter; // Create an instance of Sort
-    sorter.promptAndSort(myCollection); // Call the member function on the instance
+    askForUserLogin userLoginPrompt;
+    bool loginWasSuccessful = userLoginPrompt.promptUser();
+    
+    if (loginWasSuccessful) 
+    {
+        SongCollection myCollection;
+        myCollection.readSongsFromCSV("NoNumberingDataSet.csv");
+        Sort sorter;
+        sorter.promptAndSort(myCollection);
+    } 
+    else 
+    {
+        std::cout << "Access Denied." << std::endl;
+    }
 
     return 0;
 }
