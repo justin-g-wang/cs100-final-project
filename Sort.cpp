@@ -17,8 +17,14 @@ void Sort::promptAndSort(SongCollection& collection)
                       << "2. Album Name\n"
                       << "3. Song Name\n"
                       << "4. Popularity\n"
-                      << "5. Genre\n";
+                      << "5. Genre\n"
+                      << "6. Quit\n";
             std::cin >> userChoice;
+            
+             if (userChoice == "6") {
+                break;
+            }
+
             std::transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
 
             if (userChoice == "1" || userChoice == "artist") {
@@ -120,6 +126,7 @@ void Sort::sortBySongName(SongCollection& collection)
 void Sort::sortByPopularity(SongCollection& collection) 
 {
     std::cout << "Sorting by Popularity" << std::endl;
+    
 }
 
 void Sort::sortByGenre(SongCollection& collection) 
