@@ -7,16 +7,40 @@
 
 void Sort::promptAndSort(SongCollection& collection) 
 {
-    int userChoice;
-    std::cout << "Enter your choice for sorting: \n"
-              << "1. Artist\n"
-              << "2. Album Name\n"
-              << "3. Song Name\n"
-              << "4. Popularity\n"
-              << "5. Genre\n";
-    std::cin >> userChoice;
+    std::string userChoice;
+    bool isValidChoice = false;
 
-    switch(userChoice) {
+        while (!isValidChoice) {
+            std::cout << "Enter your choice for sorting: \n"
+                      << "1. Artist\n"
+                      << "2. Album Name\n"
+                      << "3. Song Name\n"
+                      << "4. Popularity\n"
+                      << "5. Genre\n";
+            std::cin >> userChoice;
+            std::transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
+
+            if (userChoice == "1" || userChoice == "artist") {
+                sortByArtist(collection);
+                isValidChoice = true;
+            } else if (userChoice == "2" || userChoice == "album name") {
+                sortByAlbumName(collection);
+                isValidChoice = true;
+            } else if (userChoice == "3" || userChoice == "song name") {
+                sortBySongName(collection);
+                isValidChoice = true;
+            } else if (userChoice == "4" || userChoice == "popularity") {
+                sortByPopularity(collection);
+                isValidChoice = true;
+            } else if (userChoice == "5" || userChoice == "genre") {
+                sortByGenre(collection);
+                isValidChoice = true;
+            } else {
+                std::cerr << "Invalid choice. Please try again." << std::endl;
+            }
+        }
+    }
+    /*switch(userChoice) {
         case 1: sortByArtist(collection); 
         break;
         case 2: sortByAlbumName(collection);
@@ -28,8 +52,8 @@ void Sort::promptAndSort(SongCollection& collection)
         case 5: sortByGenre(collection); 
         break;
         default: std::cerr << "Invalid choice" << std::endl;
-    }
-}
+    } 
+}*/
 
   void Sort::sortByArtist(SongCollection& collection) 
   {
@@ -125,5 +149,4 @@ void Sort::sortByGenre(SongCollection& collection)
     if (!found) {
         std::cout << "No songs found for Genre: " << genre << std::endl;
     }
-    std::cout << "Sorting by Genre" << std::endl;
 }
