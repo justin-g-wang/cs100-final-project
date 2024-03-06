@@ -1,14 +1,15 @@
+#include "UserApplication.h"
 #include "SongCollection.h"
 #include "Sort.h"
-#include "UserLogin.h"
-#include "askForUserLogin.h"
 
-int main() {
+int main() 
+{
+    UserApplication userApplication;
+    userApplication.run();
 
-    askForUserLogin userLoginPrompt;
-    bool loginWasSuccessful = userLoginPrompt.promptUser();
-    
-    if (loginWasSuccessful) 
+
+
+     if (userApplication.getLoginStatus()) 
     {
         SongCollection myCollection;
         myCollection.readSongsFromCSV("NoNumberingDataSet.csv");
@@ -17,7 +18,7 @@ int main() {
     } 
     else 
     {
-        std::cout << "Access Denied." << std::endl;
+        std::cout << "Failure" << std::endl ;
     }
 
     return 0;
