@@ -17,9 +17,7 @@ int main()
         sorter.promptAndSort(myCollection);
     } 
     else 
-    {
-        std::cout << "Failure" << std::endl ;
-    }
+    {}
 
     return 0;
 }
