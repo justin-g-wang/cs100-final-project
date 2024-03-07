@@ -35,24 +35,14 @@ Upon opening the website, users will have to log in or create an account using t
 * The  superclass that we will be using is the Logging in class. This is because everything that we are doing starts from Logging in. They create their log in information and set it from the beginning. From there on, they are able to make use their account to access ratings, a diary, and change settings. The ratings and diary class cannot exist without a user Account. In the diary class, users will be able to set their ratings when they access diary which will store their ratings.
 
  > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+<img width="677" alt="image" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/127655051/87d7d602-9b94-4a09-ae86-1e81170d06ec">
+
+>* Single-Responsibility Principle(SRP): At first, we only had one login class. This class asks the user for a username and password. It verifies if the username and password are within the standards recommended. Then it checks if the username and password are valid to grant access to that user.However, this class was updated and separated into two parts. The first class is called askForUserLogin and the second one is called UserLogin.The first class asks for the user login and verifies if the login fits all the criteria and then passes it to user login. UserLogin class verifies if the login works and allows the user to continue working. This change helped the code in making our classes easy to maintain. This way we can change the way login information is collected without affecting the authentication process. Furthermore, it improves scalability as each class is independent which means we can update or replace easily. Furthermore, it makes it easier to test as each class has a single responsibility.
+>* Open-Closed Principle (OCP): "We will add features by extending classes, not changing them. For example, if we want to add a new way to sort songs, we'll create a new class that extends our sorting functionality without altering the existing sorting class."
+>* Liskov Substitution Principle (LSP): "We will add subclasses that can be used just like their parent class without any issues. For instance, if we have a class for basic users, any subclass like 'admin user' or 'guest user' will work just as well when used in place of the basic user class."
+>* Dependency Inversion Principle (DIP): "We will add abstractions between high-level modules and low-level modules. High-level modules will not directly depend on low-level modules; instead, both will depend on interfaces. This means our user login system will interact with a storage interface, not directly with file or database storage."
+
+
 
  
  > ## Final deliverable
