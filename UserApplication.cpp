@@ -57,8 +57,16 @@ void UserApplication::registerUser() {
     std::cin >> firstName;
     std::cout << "Enter last name: ";
     std::cin >> lastName;
-    std::cout << "Enter date of birth (YYYY-MM-DD): ";
-    std::cin >> dob;
+    
+     bool dobValid = false;
+    while (!dobValid) {
+        std::cout << "Enter date of birth (YYYY-MM-DD): ";
+        std::cin >> dob;
+        dobValid = isDOBValid(dob);
+        if (!dobValid) {
+            std::cout << "Invalid date of birth format. Please use YYYY-MM-DD format with numbers only." << std::endl;
+        }
+    }
 
     UserProfile userProfile(firstName, lastName, dob);
     storage.saveUser(username, password, userProfile);
@@ -90,4 +98,21 @@ bool UserApplication::isPasswordValid(const std::string& password) {
     }
 
     return true; 
+}
+
+bool UserApplication::isDOBValid(const std::string& dob) {
+    if (dob.length() != 10) {
+        return false; // Basic length check
+    }
+
+    // Check format is YYYY-MM-DD
+    for (int i = 0; i < dob.length(); ++i) {
+        if (i == 4 || i == 7) {
+            if (dob[i] != '-') return false; // Expecting '-' at positions 5 and 8
+        } else {
+            if (!isdigit(dob[i])) return false; // Other positions should be digits
+        }
+    }
+
+    return true;
 }
