@@ -3,6 +3,7 @@
 
 #include "UserStorage.h"
 #include "UserAuthentication.h"
+#include "UserProfile.h"
 
 class UserApplication {
 private:
@@ -16,6 +17,7 @@ public:
     void registerUser();
     bool loginUser();
     bool getLoginStatus() const;
+    bool isPasswordValid(const std::string& password);
 };
 
 #endif // USERAPPLICATION_H

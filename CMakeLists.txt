@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 project(SongCollection)
 
 # Add all the source files needed to compile the executable
-add_executable(SongCollection main.cpp Song.cpp SongCollection.cpp Sort.cpp UserStorage.cpp UserAuthentication.cpp UserApplication.cpp)
+add_executable(SongCollection main.cpp Song.cpp SongCollection.cpp Sort.cpp UserStorage.cpp UserAuthentication.cpp UserApplication.cpp UserProfile.cpp)
 
 # If you have used any libraries, you need to link them as well
 # target_link_libraries(SongCollection your_library)

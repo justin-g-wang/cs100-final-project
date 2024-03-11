@@ -2,6 +2,7 @@
 #include <fstream>
 #include <iostream>
 
+
 UserStorage::UserStorage() {
     loadUsers();
 }
@@ -19,8 +20,9 @@ void UserStorage::loadUsers() {
     }
 }
 
-void UserStorage::saveUser(const std::string& username, const std::string& password) {
-    if (userExists(username)) {
+void UserStorage::saveUser(const std::string& username, const std::string& password, const UserProfile& userProfile) {
+    
+     if (userExists(username)) {
         std::cout << "User Already Exists." << std::endl;
         return;
     }
@@ -32,7 +34,10 @@ void UserStorage::saveUser(const std::string& username, const std::string& passw
         return;
     }
 
-    outFile << username << " " << password << std::endl;
+    outFile << username << " " << password << " " 
+            << userProfile.getFirstName() << " " 
+            << userProfile.getLastName() << " " 
+            << userProfile.getDOB() << std::endl;
     std::cout << "User Registered Successfully." << std::endl;
 }
 

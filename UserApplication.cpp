@@ -40,12 +40,28 @@ void UserApplication::run() {
 
 void UserApplication::registerUser() {
     std::string username, password;
+    std::string firstName, lastName, dob; 
+
     std::cout << "Enter username: ";
     std::cin >> username;
-    std::cout << "Enter password: ";
-    std::cin >> password;
+     while (true) {
+        std::cout << "Enter password: ";
+        std::cin >> password;
+        if (isPasswordValid(password)) {
+            break; 
+        }
+    }
 
-    storage.saveUser(username, password);
+
+    std::cout << "Enter first name: ";
+    std::cin >> firstName;
+    std::cout << "Enter last name: ";
+    std::cin >> lastName;
+    std::cout << "Enter date of birth (YYYY-MM-DD): ";
+    std::cin >> dob;
+
+    UserProfile userProfile(firstName, lastName, dob);
+    storage.saveUser(username, password, userProfile);
 }
 
 bool UserApplication::loginUser() {
@@ -60,4 +76,18 @@ bool UserApplication::loginUser() {
 
 bool UserApplication::getLoginStatus() const {
     return isLoggedIn;
+}
+
+bool UserApplication::isPasswordValid(const std::string& password) {
+    if (password.length() < 8) {
+        std::cout << "Password must be at least 8 characters long." << std::endl;
+        return false;
+    }
+
+    if (password.find_first_of("0123456789") == std::string::npos) {
+        std::cout << "Password must include at least one number." << std::endl;
+        return false;
+    }
+
+    return true; 
 }

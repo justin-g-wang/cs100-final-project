@@ -3,6 +3,7 @@
 
 #include <unordered_map>
 #include <string>
+#include "UserProfile.h"
 
 class UserStorage {
 private:
@@ -12,7 +13,7 @@ private:
 public:
     UserStorage();
     void loadUsers();
-    void saveUser(const std::string& username, const std::string& password);
+    void saveUser(const std::string& username, const std::string& password, const UserProfile& userProfile);
     bool userExists(const std::string& username) const;
     bool validateUser(const std::string& username, const std::string& password) const;
 };
