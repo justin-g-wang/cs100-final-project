@@ -1,6 +1,6 @@
 #include "../header/SongCollection.h"
 
-    class Sort 
+    class Sort
     {
     public:
          void sortByArtist(SongCollection& collection);
