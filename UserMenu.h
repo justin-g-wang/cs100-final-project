@@ -10,7 +10,7 @@ public:
         std::cout << "Select An Option" << std::endl;
         std::cout << "1. Register" << std::endl;
         std::cout << "2. Login" << std::endl;
-        std::cout << "3. Forget Password" << std::endl; 
+        std::cout << "3. Forget Password Or Change Password" << std::endl; 
         std::cout << "4. Exit" << std::endl; 
         std::cin >> choice;
         if (std::cin.fail()) 
