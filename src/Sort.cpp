@@ -1,4 +1,6 @@
 #include "../header/Sort.h"
+#include "../header/SongCollection.h"
+#include "../header/Diary.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -6,12 +8,17 @@
 #include <limits>
 
 
+
 void Sort::promptAndSort(SongCollection& collection) 
 {
     std::string userChoice;
     bool isValidChoice = false;
+    Diary myDiary;
 
-        while (!isValidChoice) {
+    myDiary.loadFromFile();
+
+        // while (!isValidChoice) {
+        while (true) {
             std::cout << "Enter your choice for sorting: \n"
                       << "1. Artist\n"
                       << "2. Album Name\n"
@@ -22,6 +29,7 @@ void Sort::promptAndSort(SongCollection& collection)
             std::cin >> userChoice;
             
              if (userChoice == "6") {
+                myDiary.saveToFile();
                 break;
             }
 
@@ -42,11 +50,20 @@ void Sort::promptAndSort(SongCollection& collection)
             } else if (userChoice == "5" || userChoice == "genre") {
                 sortByGenre(collection);
                 isValidChoice = true;
+                //myDiary.addSong(collection);
+                myDiary.addAlbum(collection);
+                std::cout << myDiary.getNumSongs() << std::endl;
+                myDiary.viewDiary(collection);
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }
+
         }
+
+        myDiary.saveToFile();
     }
+
+
 
   void Sort::sortByArtist(SongCollection& collection) 
   {
