@@ -3,12 +3,16 @@
 #include "../header/UserLogin.h"
 #include "../header/askForUserLogin.h"
 #include "../header/Diary.h"
-int main() {
+#include "../header/UserApplication.h"
 
-    askForUserLogin userLoginPrompt;
-    bool loginWasSuccessful = userLoginPrompt.promptUser();
-    
-    if (loginWasSuccessful) 
+int main() 
+{
+    UserApplication userApplication;
+    userApplication.run();
+
+
+
+     if (userApplication.getLoginStatus()) 
     {
         SongCollection myCollection;
         myCollection.readSongsFromCSV("NoNumberingDataSet.csv");
@@ -16,9 +20,7 @@ int main() {
         sorter.promptAndSort(myCollection);
     } 
     else 
-    {
-        std::cout << "Access Denied." << std::endl;
-    }
+    {}
 
     return 0;
 }
