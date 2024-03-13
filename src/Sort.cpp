@@ -1,11 +1,12 @@
-#include "Sort.h"
-#include "SongCollection.h"
+#include "../header/Sort.h"
+#include "../header/SongCollection.h"
+#include "../header/Diary.h"
 #include <iostream>
 #include <string>
 #include <cstring>
 #include <algorithm>
 #include <limits>
-#include "Diary.h"
+
 
 
 void Sort::promptAndSort(SongCollection& collection) 
@@ -49,8 +50,8 @@ void Sort::promptAndSort(SongCollection& collection)
             } else if (userChoice == "5" || userChoice == "genre") {
                 sortByGenre(collection);
                 isValidChoice = true;
-
-                myDiary.addSong(collection);
+                //myDiary.addSong(collection);
+                myDiary.addAlbum(collection);
                 std::cout << myDiary.getNumSongs() << std::endl;
                 myDiary.viewDiary(collection);
             } else {

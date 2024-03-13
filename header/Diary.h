@@ -29,11 +29,11 @@ class Diary {
         void viewDiary(SongCollection& collection);
         void saveToFile() const;
         void loadFromFile();
-        void addAlbum();
-        void addArtist();
-        void removeSong();
-        void removeAlbum();
-        void removeArtist();
+        void addAlbum(SongCollection& collection);
+        void addArtist(SongCollection& collection);
+        void removeSong(SongCollection& collection);
+        void removeAlbum(SongCollection& collection);
+        void removeArtist(SongCollection& collection);
 
 };
 

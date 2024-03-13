@@ -1,8 +1,8 @@
-#include "SongCollection.h"
-#include "Sort.h"
-#include "UserLogin.h"
-#include "askForUserLogin.h"
-#include "Diary.h"
+#include "../header/SongCollection.h"
+#include "../header/Sort.h"
+#include "../header/UserLogin.h"
+#include "../header/askForUserLogin.h"
+#include "../header/Diary.h"
 int main() {
 
     askForUserLogin userLoginPrompt;
