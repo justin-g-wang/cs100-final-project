@@ -22,7 +22,7 @@
 
 
     int Diary::getNumSongs() {
-        return numSongs;
+        return diary.size();
     }
 
     int Diary::getNumArtists() {
@@ -70,7 +70,39 @@
             std::cout << "No songs found for : " << songTitle << std::endl;
         }
     }
-        
+    
+    void Diary::saveToFile() const {
+        std::ofstream file("diary.txt"); // "diary_bob.txt" --> "diary_" + username + ".txt", do the same for loadToFile()
+    for (const auto& song : diary) {
+        file << song.artist << ","
+             << song.albumName << ","
+             << song.songName << ","
+             << song.popularity << ","
+             << song.genre << std::endl;
+    }
+    file.close();
+    }
+
+    void Diary::loadFromFile() {
+        std::ifstream file("diary.txt");
+        std::string line;
+        while (std::getline(file, line)) {
+            std::stringstream ss(line);
+            std::string artist, albumName, songName, popularity, genre;
+            
+            std::getline(ss, artist, ',');
+            std::getline(ss, albumName, ',');
+            std::getline(ss, songName, ',');
+            std::getline(ss, popularity, ',');
+            std::getline(ss, genre);
+            
+            Song song(artist, albumName, songName, popularity, genre);
+            diary.push_back(song);
+        }
+        file.close();
+    }
+
+
     void Diary::addAlbum(){
 
     }

@@ -14,6 +14,8 @@ void Sort::promptAndSort(SongCollection& collection)
     bool isValidChoice = false;
     Diary myDiary;
 
+    myDiary.loadFromFile();
+
         // while (!isValidChoice) {
         while (true) {
             std::cout << "Enter your choice for sorting: \n"
@@ -26,6 +28,7 @@ void Sort::promptAndSort(SongCollection& collection)
             std::cin >> userChoice;
             
              if (userChoice == "6") {
+                myDiary.saveToFile();
                 break;
             }
 
@@ -55,6 +58,8 @@ void Sort::promptAndSort(SongCollection& collection)
             }
 
         }
+
+        myDiary.saveToFile();
     }
     /*switch(userChoice) {
         case 1: sortByArtist(collection); 
@@ -70,6 +75,8 @@ void Sort::promptAndSort(SongCollection& collection)
         default: std::cerr << "Invalid choice" << std::endl;
     } 
 }*/
+
+
 
   void Sort::sortByArtist(SongCollection& collection) 
   {
