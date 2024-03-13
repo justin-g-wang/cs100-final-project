@@ -12,6 +12,7 @@ void Sort::promptAndSort(SongCollection& collection)
 {
     std::string userChoice;
     bool isValidChoice = false;
+    Diary myDiary;
 
         // while (!isValidChoice) {
         while (true) {
@@ -46,9 +47,9 @@ void Sort::promptAndSort(SongCollection& collection)
                 sortByGenre(collection);
                 isValidChoice = true;
 
-                Diary myDiary;
                 myDiary.addSong(collection);
                 std::cout << myDiary.getNumSongs() << std::endl;
+                myDiary.viewDiary(collection);
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }

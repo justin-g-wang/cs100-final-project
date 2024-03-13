@@ -2,6 +2,7 @@
 #include "Diary.h"
 #include "Song.h"
 #include "Sort.h"
+#include "SongCollection.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -32,7 +33,13 @@
         return numAlbums;
     }
 
-    void viewDiary(); 
+    void Diary::viewDiary(SongCollection& collection) {
+        std::cout << "===== DIARY =====" << std::endl;
+        for (auto &song : diary) {
+            std::cout << "Title: " << song.songName << ", Artist: " << song.artist << ", Album: " << song.albumName << std::endl;
+        }
+        std::cout << std::endl;
+    }
 
     void Diary::addSong(SongCollection& collection){
         std::string songTitle;
@@ -48,7 +55,7 @@
             {
                 found = true;
                 numSongs++;
-                auto hello = Song(song.songName, "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, song.songName, "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << "Song: " << song.songName
                         << ", Album: " << song.albumName
