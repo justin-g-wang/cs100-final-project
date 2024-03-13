@@ -16,6 +16,6 @@ class Ratings {
         void getSongRating();
         void getAlbumRating();
         void getArtistsRating();
-}
+};
 
 #endif //ratings_h

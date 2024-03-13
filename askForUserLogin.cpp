@@ -8,7 +8,7 @@ bool askForUserLogin::promptUser()
     bool loginSuccess = false; 
 
     std::cout << "Click One If You Would Like To Create An Account" << std::endl;
-    std::cout << "Click Two If You Already Have An Accoutant" << std::endl;
+    std::cout << "Click Two If You Already Have An Account" << std::endl;
     std::cin >> userInput;
 
     loginSystem.loadUsersFromFile();

@@ -1,37 +1,45 @@
 #include "ratings.h"
 #include "Diary.h"
 #include "Song.h"
+#include "Sort.h"
 #include <iostream>
 #include <string>
 #include <cstring>
 #include <algorithm>
 #include <limits>
+#include <fstream>
+#include <sstream>
+#include <vector>
 
-     void createDiary() {
+     void createDiary(int numSongs, int numArtists, int numAlbums, std::vector<Song>& diary) {
         // Initialize or reset the diary
-        diary.clear();
         numSongs = 0;
         numArtists = 0;
         numAlbums = 0;
+        diary.clear();
     }
 
 
-    int getNumSongs() const {
+    int Diary::getNumSongs() {
         return numSongs;
     }
-    int getNumArtists() const {
+
+    int Diary::getNumArtists() {
         return numArtists;
     }
-    int getNumAlbums() const {
+    
+    int Diary::getNumAlbums() {
         return numAlbums;
     }
 
-    void Diary::addSong(std::vector<Song>& diary){
-        std::cout << "Enter the title of the song: ";
+    void viewDiary(); 
+
+    void Diary::addSong(SongCollection& collection){
         std::string songTitle;
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::getline(std::cin, songName); 
-        
+        std::cout << "Enter the title of the song: ";
+        // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::getline(std::cin, songTitle);
+
         auto& songs = collection.getSongs();
         bool found = false;
         for (const auto& song : songs) 
@@ -40,22 +48,26 @@
             {
                 found = true;
                 numSongs++;
-                diary.push_back(Song(songName));   
-                std::cout << "Artist: " << song.artist
+                auto hello = Song(song.songName, "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
+                diary.push_back(hello);   
+                std::cout << "Song: " << song.songName
                         << ", Album: " << song.albumName
-                        << ", Song: " << song.songName
+                        << ", Artist: " << song.artist << std::endl;
+                        
+                std::cout << songTitle << " added to the diary!" << std::endl;
+                break;
             }   
         }
          
         if (!found) {
-            std::cout << "No songs found for : " << songName << std::endl;
+            std::cout << "No songs found for : " << songTitle << std::endl;
         }
-        std::cout << songName << " added to the diary!" << std::endl;
     }
         
     void Diary::addAlbum(){
 
     }
+    
     void Diary::addArtist(){
 
     }

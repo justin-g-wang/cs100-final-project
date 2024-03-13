@@ -2,7 +2,7 @@
 #include "Sort.h"
 #include "UserLogin.h"
 #include "askForUserLogin.h"
-
+#include "Diary.h"
 int main() {
 
     askForUserLogin userLoginPrompt;
