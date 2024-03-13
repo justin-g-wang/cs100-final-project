@@ -19,6 +19,7 @@ public:
     bool getLoginStatus() const;
     bool isPasswordValid(const std::string& password);
     bool isDOBValid(const std::string& dob);
+    void resetUserPassword();
 };
 
 #endif // USERAPPLICATION_H

@@ -21,7 +21,7 @@ class Diary {
         void showArtistsRecs();
         void addSong();
         void removeSong();
-}
+};
 
 
 

@@ -10,28 +10,28 @@ void UserApplication::run() {
     while (true) {
         int choice = UserMenu::displayMainMenu();
 
-        if (choice == -1) 
-        {
+        if (choice == -1) {
             std::cout << "Invalid Option. Please enter a number." << std::endl;
             continue;
         }
-        switch (choice) 
-        {
+        switch (choice) {
             case 1:
                 registerUser();
                 break;
             case 2:
-                if(loginUser()) {
+                if (loginUser()) {
                     isLoggedIn = true;
                     std::cout << "Login Successful!\n";
-                    return ;
                 } else {
                     std::cout << "Login Failed. Please Check Your Username And Password" << std::endl;
                 }
                 break;
-            case 3:
+            case 3: 
+                resetUserPassword();
+                break;
+            case 4: 
                 std::cout << "Exiting Application" << std::endl;
-                return; 
+                return;
             default:
                 std::cout << "Invalid Option. Please Try Again" << std::endl;
         }
@@ -115,4 +115,38 @@ bool UserApplication::isDOBValid(const std::string& dob) {
     }
 
     return true;
+}
+
+void UserApplication::resetUserPassword() {
+    std::string username, firstName, lastName, dob, newPassword;
+    std::cout << "Enter your username: ";
+    std::cin >> username;
+    std::cout << "Enter your first name: ";
+    std::cin >> firstName;
+    std::cout << "Enter your last name: ";
+    std::cin >> lastName;
+    std::cout << "Enter your date of birth (YYYY-MM-DD): ";
+    std::cin >> dob;
+
+    try {
+        UserProfile user = storage.getUserProfile(username);
+        if (user.getFirstName() == firstName && user.getLastName() == lastName && user.getDOB() == dob) {
+            bool validPassword = false;
+            while (!validPassword) {
+                std::cout << "Enter your new password: ";
+                std::cin >> newPassword;
+                validPassword = isPasswordValid(newPassword);
+                if (!validPassword) {
+                    std::cout << "Password does not meet the requirements. It must be at least 8 characters long and include at least one number." << std::endl;
+                } else {
+                    storage.updateUserPassword(username, newPassword);
+                    std::cout << "Password updated successfully.\n";
+                }
+            }
+        } else {
+            std::cout << "User Verification Failed. Cannot Reset Password.\n";
+        }
+    } catch (const std::runtime_error& e) {
+        std::cout << "Username Does Not Exist.\n";
+    }
 }
