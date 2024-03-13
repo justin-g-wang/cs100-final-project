@@ -9,11 +9,10 @@
 
      void createDiary() {
         // Initialize or reset the diary
-        Diary.clear();
+        diary.clear();
         numSongs = 0;
         numArtists = 0;
         numAlbums = 0;
-        std::vector<Song>& diary
     }
 
 
@@ -29,15 +28,31 @@
 
     void Diary::addSong(std::vector<Song>& diary){
         std::cout << "Enter the title of the song: ";
-        std::string addedSong;
+        std::string songTitle;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::getline(std::cin, addedSong); 
-        numSongs++;
-        diary.push_back(Song(songName));
-
-    std::cout << songName << " added to the diary!" << std::endl;
-}
-    
+        std::getline(std::cin, songName); 
+        
+        auto& songs = collection.getSongs();
+        bool found = false;
+        for (const auto& song : songs) 
+        {
+            if (song.songName == songTitle) 
+            {
+                found = true;
+                numSongs++;
+                diary.push_back(Song(songName));   
+                std::cout << "Artist: " << song.artist
+                        << ", Album: " << song.albumName
+                        << ", Song: " << song.songName
+            }   
+        }
+         
+        if (!found) {
+            std::cout << "No songs found for : " << songName << std::endl;
+        }
+        std::cout << songName << " added to the diary!" << std::endl;
+    }
+        
     void Diary::addAlbum(){
 
     }
