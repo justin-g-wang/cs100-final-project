@@ -4,7 +4,8 @@
 #include "UserStorage.h"
 #include <string>
 
-class UserAuthentication {
+class UserAuthentication 
+{
 private:
     UserStorage& storage;
 

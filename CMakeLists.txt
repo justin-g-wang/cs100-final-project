@@ -1,14 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
+project(SoundNotes)
 
-project(SongCollection)
+add_subdirectory(googletest)
+enable_testing()
 
-# Add all the source files needed to compile the executable
-
-add_executable(SongCollection main.cpp Song.cpp SongCollection.cpp Sort.cpp UserStorage.cpp UserAuthentication.cpp UserApplication.cpp UserLogin.cpp askForUserLogin.cpp Recc.cpp)
-
-# If you have used any libraries, you need to link them as well
-# target_link_libraries(SongCollection your_library)
-
-# Specify the C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+add_executable(SongCollection main.cpp Song.cpp SongCollection.cpp Sort.cpp 
+UserStorage.cpp UserAuthentication.cpp UserApplication.cpp UserProfile.cpp PasswordRecovery.cpp)
+
+add_executable(googleTest UserLoginTesting.cpp UserStorage.cpp UserAuthentication.cpp UserApplication.cpp UserProfile.cpp PasswordRecovery.cpp)
+
+target_link_libraries(googleTest gtest gtest_main)
+add_test(NAME GoogleTest COMMAND googleTest)

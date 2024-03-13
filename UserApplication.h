@@ -5,7 +5,8 @@
 #include "UserAuthentication.h"
 #include "UserProfile.h"
 
-class UserApplication {
+class UserApplication 
+{
 private:
     UserStorage storage;
     UserAuthentication authentication;
@@ -19,6 +20,7 @@ public:
     bool getLoginStatus() const;
     bool isPasswordValid(const std::string& password);
     bool isDOBValid(const std::string& dob);
+    void resetUserPassword();
 };
 
 #endif // USERAPPLICATION_H
