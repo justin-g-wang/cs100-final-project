@@ -5,7 +5,8 @@
 #include "UserAuthentication.h"
 #include "UserProfile.h"
 
-class UserApplication {
+class UserApplication 
+{
 private:
     UserStorage storage;
     UserAuthentication authentication;

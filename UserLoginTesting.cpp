@@ -4,7 +4,7 @@
 #include "UserAuthentication.h"
 #include <gtest/gtest.h>
 
-TEST(UserProfileTest, CheckGetters&Setters) 
+TEST(UserProfileTest, CheckGettersAndSetters) 
 {
     // Creates A User Profile
     UserProfile user("John", "Doe", "1990-01-01");

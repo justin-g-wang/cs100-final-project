@@ -24,10 +24,14 @@ void PasswordRecovery::resetPassword()
             std::cin >> newPassword;
             storage.updateUserPassword(username, newPassword);
             std::cout << "Password updated successfully.\n";
-        } else {
+        } 
+        else
+        {
             std::cout << "User verification failed. Cannot reset password.\n";
         }
-    } else {
+    } 
+    else 
+    {
         std::cout << "Username does not exist.\n";
     }
 }

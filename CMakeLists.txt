@@ -8,7 +8,9 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 add_executable(SongCollection main.cpp Song.cpp SongCollection.cpp Sort.cpp 
-UserStorage.cpp UserAuthentication.cpp UserApplication.cpp UserProfile.cpp PasswordRecovery.cpp)
+UserStorage.cpp UserAuthentication.cpp UserApplication.cpp UserProfile.cpp PasswordRecovery.cpp UserLogin.cpp askForUserLogin.cpp Recc.cpp)
+
+add_executable(SongCollection main.cpp Song.cpp SongCollection.cpp 
 
 add_executable(googleTest UserLoginTesting.cpp UserStorage.cpp UserAuthentication.cpp UserApplication.cpp UserProfile.cpp PasswordRecovery.cpp)
 target_link_libraries(googleTest gtest gtest_main)

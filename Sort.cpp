@@ -17,8 +17,14 @@ void Sort::promptAndSort(SongCollection& collection)
                       << "2. Album Name\n"
                       << "3. Song Name\n"
                       << "4. Popularity\n"
-                      << "5. Genre\n";
+                      << "5. Genre\n"
+                      << "6. Quit\n";
             std::cin >> userChoice;
+            
+             if (userChoice == "6") {
+                break;
+            }
+
             std::transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
 
             if (userChoice == "1" || userChoice == "artist") {
@@ -41,20 +47,6 @@ void Sort::promptAndSort(SongCollection& collection)
             }
         }
     }
-    /*switch(userChoice) {
-        case 1: sortByArtist(collection); 
-        break;
-        case 2: sortByAlbumName(collection);
-         break;
-        case 3: sortBySongName(collection); 
-        break;
-        case 4: sortByPopularity(collection); 
-        break;
-        case 5: sortByGenre(collection); 
-        break;
-        default: std::cerr << "Invalid choice" << std::endl;
-    } 
-}*/
 
   void Sort::sortByArtist(SongCollection& collection) 
   {
@@ -83,9 +75,31 @@ void Sort::promptAndSort(SongCollection& collection)
         std::cout << "No songs found for artist: " << inputArtist << std::endl;
     }
 }
-void Sort::sortByAlbumName(SongCollection& collection) 
-{
+void Sort::sortByAlbumName(SongCollection& collection) {
+    std::string albumName;
     std::cout << "Sorting by Album Name" << std::endl;
+    std::cout << "Enter An Album Name: ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, albumName);
+
+    auto& songs = collection.getSongs();
+    bool found = false;
+    for (const auto& song : songs) 
+    {
+        if (song.albumName == albumName) 
+        {
+            found = true;
+            std::cout << "Artist: " << song.artist
+                      << ", Album: " << song.albumName
+                      << ", Song: " << song.songName
+                      << ", Popularity: " << song.popularity
+                      << ", Genre: " << song.genre << std::endl;
+        }
+    }
+
+    if (!found) {
+        std::cout << "No songs found for album: " << albumName << std::endl;
+    }
 }
 
 void Sort::sortBySongName(SongCollection& collection) 
@@ -116,10 +130,34 @@ void Sort::sortBySongName(SongCollection& collection)
     }
 }
 
-
 void Sort::sortByPopularity(SongCollection& collection) 
 {
+    std::string PopularityInt;
     std::cout << "Sorting by Popularity" << std::endl;
+    std::cout << "Enter A Popularity (from 0 - 75): ";
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::getline(std::cin, PopularityInt);
+
+    auto& songs = collection.getSongs();
+    bool found = false;
+
+    for (const auto& song : songs) 
+    {
+
+        if (song.popularity == PopularityInt) 
+        {
+            found = true;
+            std::cout << "Artist: " << song.artist
+                      << ", Album: " << song.albumName
+                      << ", Song: " << song.songName
+                      << ", Popularity: " << song.popularity
+                      << ", Genre: " << song.genre << std::endl;
+        }
+    }
+
+    if (!found) {
+        std::cout << "No songs found for popularity: " << PopularityInt << std::endl;
+    }
 }
 
 void Sort::sortByGenre(SongCollection& collection) 
