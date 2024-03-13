@@ -29,9 +29,9 @@
 
     void Diary::addSong(std::vector<Song>& diary){
         std::cout << "Enter the title of the song: ";
-        std::string addedArtist;
+        std::string addedSong;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        std::getline(std::cin, addedArtist); 
+        std::getline(std::cin, addedSong); 
         numSongs++;
         diary.push_back(Song(songName));
 
