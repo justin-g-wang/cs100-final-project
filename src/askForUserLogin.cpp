@@ -1,6 +1,15 @@
 #include "../header/askForUserLogin.h"
 #include <iostream>
 
+
+// void askForUserLogin::setUsername(const std::string& name) {
+//     username = name;
+// }
+
+// std::string askForUserLogin::getUsername() {
+//     return username;
+// }
+
 bool askForUserLogin::promptUser() 
 {
     int userInput;

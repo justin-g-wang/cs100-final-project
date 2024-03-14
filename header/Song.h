@@ -16,8 +16,9 @@ struct Song
     std::string songName;
     std::string popularity; 
     std::string genre;
+    std::string rating;
 
-    Song(const std::string& artist, const std::string& albumName, const std::string& songName, const std::string& popularity, const std::string& genre);
+    Song(const std::string& artist, const std::string& albumName, const std::string& songName, const std::string& popularity, const std::string& genre , const std::string& rating);
 };
 
 
