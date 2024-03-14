@@ -10,9 +10,7 @@ int main()
     UserApplication userApplication;
     userApplication.run();
 
-
-
-     if (userApplication.getLoginStatus()) 
+    if (userApplication.getLoginStatus()) 
     {
         SongCollection myCollection;
         myCollection.readSongsFromCSV("NoNumberingDataSet.csv");
