@@ -55,6 +55,8 @@ void Sort::promptAndSort(SongCollection& collection)
                 myDiary.addAlbum(collection);
                 std::cout << myDiary.getNumSongs() << std::endl;
                 myDiary.viewDiary(collection);
+                //myDiary.removeSong(collection);
+                myDiary.removeAlbum(collection);
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }

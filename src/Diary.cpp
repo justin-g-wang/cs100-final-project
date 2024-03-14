@@ -55,7 +55,7 @@
             {
                 found = true;
                 numSongs++;
-                auto hello = Song(song.artist, song.albumName, song.songName, "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, song.songName, song.genre, "PLACEHOLDER"); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << "Song: " << song.songName
                         << ", Album: " << song.albumName
@@ -117,7 +117,7 @@
             {
                 found = true;
                 numAlbums++;
-                auto hello = Song(song.artist, song.albumName, song.songName, "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << ", Album: " << song.albumName << std::endl;
                         
@@ -142,7 +142,7 @@
         bool found = false;
         for (const auto& song : songs) 
         {
-            if (song.albumName == artistName) 
+            if (song.artist == artistName) 
             {
                 found = true;
                 numAlbums++;
@@ -160,11 +160,59 @@
         }
     }
     void Diary::removeSong(SongCollection& collection){
+        std::string songTitle;
+        std::cout << "Enter the title of the song to remove: ";
+        std::getline(std::cin, songTitle);
 
-    }
+    // Iterate through the diary and remove the song if found
+        auto it = std::remove_if(diary.begin(), diary.end(), [&](const Song& song) {
+            return song.songName == songTitle;
+        });
+
+        // If song is found and removed, update counters
+        if (it != diary.end()) {
+            diary.erase(it, diary.end());
+            numSongs--;
+            std::cout << "Song \"" << songTitle << "\" removed from diary." << std::endl;
+        } else {
+            std::cout << "Song \"" << songTitle << "\" not found in diary." << std::endl;
+        }
+        }
     void Diary::removeAlbum(SongCollection& collection){
+    std::string albumTitle;
+    std::cout << "Enter the title of the album to remove: ";
+    std::getline(std::cin, albumTitle);
 
+    // Iterate through the diary and remove songs belonging to the album
+    auto it = std::remove_if(diary.begin(), diary.end(), [&](const Song& song) {
+        return song.albumName == albumTitle;
+    });
+
+    // If songs are found and removed, update counters
+    if (it != diary.end()) {
+        diary.erase(it, diary.end());
+        numAlbums--;
+        std::cout << "Album \"" << albumTitle << "\" removed from diary." << std::endl;
+    } else {
+        std::cout << "Album \"" << albumTitle << "\" not found in diary." << std::endl;
     }
+}
     void Diary::removeArtist(SongCollection& collection){
-        
+    std::string artistName;
+    std::cout << "Enter the name of the artist to remove: ";
+    std::getline(std::cin, artistName);
+
+    // Iterate through the diary and remove songs belonging to the artist
+    auto it = std::remove_if(diary.begin(), diary.end(), [&](const Song& song) {
+        return song.artist == artistName;
+    });
+
+    // If songs are found and removed, update counters
+    if (it != diary.end()) {
+        diary.erase(it, diary.end());
+        numArtists--;
+        std::cout << "Artist \"" << artistName << "\" removed from diary." << std::endl;
+    } else {
+        std::cout << "Artist \"" << artistName << "\" not found in diary." << std::endl;
+    }
     }
