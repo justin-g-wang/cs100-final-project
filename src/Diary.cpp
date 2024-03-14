@@ -159,6 +159,7 @@
             std::cout << "No albums found for : " << artistName << std::endl;
         }
     }
+
     void Diary::removeSong(SongCollection& collection){
 
     }
@@ -167,4 +168,8 @@
     }
     void Diary::removeArtist(SongCollection& collection){
         
+    }
+
+    std::vector<Song>& getDiarySongs() {
+        return diary;
     }
