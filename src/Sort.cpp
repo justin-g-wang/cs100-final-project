@@ -52,14 +52,6 @@ void Sort::promptAndSort(SongCollection& collection)
             } else if (userChoice == "5" || userChoice == "genre") {
                 sortByGenre(collection);
                 isValidChoice = true;
-                //myDiary.addSong(collection);
-               // myDiary.addAlbum(collection);
-                std::cout << myDiary.getNumSongs() << std::endl;
-                myDiary.viewDiary(collection);
-               // myDiary.removeSong(collection);
-               // myDiary.removeAlbum(collection);
-                //ratings.setSongRating(collection, myDiary.getDiary()); 
-                ratings.getSongRating(collection, myDiary.getDiary());
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }
