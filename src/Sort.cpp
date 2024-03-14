@@ -1,7 +1,7 @@
 #include "../header/Sort.h"
-//#include "../src/Diary.cpp"
 #include "../header/SongCollection.h"
 #include "../header/Diary.h"
+#include "../header/ratings.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -15,6 +15,7 @@ void Sort::promptAndSort(SongCollection& collection)
     std::string userChoice;
     bool isValidChoice = false;
     Diary myDiary;
+    Ratings ratings;
 
     myDiary.loadFromFile();
 
@@ -52,11 +53,13 @@ void Sort::promptAndSort(SongCollection& collection)
                 sortByGenre(collection);
                 isValidChoice = true;
                 //myDiary.addSong(collection);
-                myDiary.addAlbum(collection);
+               // myDiary.addAlbum(collection);
                 std::cout << myDiary.getNumSongs() << std::endl;
                 myDiary.viewDiary(collection);
-                //myDiary.removeSong(collection);
-                myDiary.removeAlbum(collection);
+               // myDiary.removeSong(collection);
+               // myDiary.removeAlbum(collection);
+                //ratings.setSongRating(collection, myDiary.getDiary()); 
+                ratings.getSongRating(collection, myDiary.getDiary());
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }

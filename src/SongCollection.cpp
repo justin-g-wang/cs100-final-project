@@ -29,7 +29,7 @@ void SongCollection::readSongsFromCSV(const std::string& filename)
         std::getline(in, genre);
             
 
-        songs.emplace_back(artist, albumName, songName, popularity, genre);
+        songs.emplace_back(artist, albumName, songName, popularity, genre, "0");
     }
 }
 

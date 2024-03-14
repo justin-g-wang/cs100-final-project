@@ -3,6 +3,7 @@
 #include "../header/Song.h"
 #include "../header/Sort.h"
 #include "../header/SongCollection.h"
+#include "../header/askForUserLogin.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -36,9 +37,13 @@
     void Diary::viewDiary(SongCollection& collection) {
         std::cout << "===== DIARY =====" << std::endl;
         for (auto &song : diary) {
-            std::cout << "Title: " << song.songName << ", Artist: " << song.artist << ", Album: " << song.albumName << std::endl;
+            std::cout << "Title: " << song.songName << ", Artist: " << song.artist << ", Album: " << song.albumName << ", Rating: " << song.rating << std::endl;
         }
         std::cout << std::endl;
+    }
+
+    std::vector<Song>& Diary::getDiary(){
+        return diary;
     }
 
     void Diary::addSong(SongCollection& collection){
@@ -55,7 +60,7 @@
             {
                 found = true;
                 numSongs++;
-                auto hello = Song(song.artist, song.albumName, song.songName, song.genre, "PLACEHOLDER"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, song.songName, song.genre, "NA", "NA"); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << "Song: " << song.songName
                         << ", Album: " << song.albumName
@@ -72,13 +77,16 @@
     }
     
     void Diary::saveToFile() const {
+        // askForUserLogin userLogin;
+        // std::string username = userLogin.getUsername();
         std::ofstream file("diary.txt"); // "diary_bob.txt" --> "diary_" + username + ".txt", do the same for loadToFile()
     for (const auto& song : diary) {
         file << song.artist << ","
              << song.albumName << ","
              << song.songName << ","
              << song.popularity << ","
-             << song.genre << std::endl;
+             << song.genre << ","
+             << song.rating << std::endl;
     }
     file.close();
     }
@@ -88,15 +96,16 @@
         std::string line;
         while (std::getline(file, line)) {
             std::stringstream ss(line);
-            std::string artist, albumName, songName, popularity, genre;
+            std::string artist, albumName, songName, popularity, genre, rating;
             
             std::getline(ss, artist, ',');
             std::getline(ss, albumName, ',');
             std::getline(ss, songName, ',');
             std::getline(ss, popularity, ',');
-            std::getline(ss, genre);
+            std::getline(ss, genre, ',');
+            std::getline(ss, rating);
             
-            Song song(artist, albumName, songName, popularity, genre);
+            Song song(artist, albumName, songName, popularity, genre, rating);
             diary.push_back(song);
         }
         file.close();
@@ -117,7 +126,7 @@
             {
                 found = true;
                 numAlbums++;
-                auto hello = Song(song.artist, song.albumName, "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, "NA", "", "NA","NA"); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << ", Album: " << song.albumName << std::endl;
                         
@@ -146,7 +155,7 @@
             {
                 found = true;
                 numAlbums++;
-                auto hello = Song(song.artist, song.albumName, song.songName, "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, song.songName, "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << ", Artist: " << song.artist << std::endl;
                         
