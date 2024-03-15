@@ -46,7 +46,7 @@ Dependency Inversion Principle (DIP): "We will add abstractions between high-lev
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > To install this app and run the application, this Github repository shoud be cloned into an IDE that supports C++ programming. After you clone it, you need to run `cmake .`, `make` , `./SongCollection`. After running `./`SongCollection`, you should be able to find music.
+ To install this app and run the application, this Github repository shoud be cloned into an IDE that supports C++ programming. After you clone it, you need to run `cmake .`, `make` , `./SongCollection`. After running `./`SongCollection`, you should be able to find login in, rate music and get recommendations. 
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
