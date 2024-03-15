@@ -11,56 +11,6 @@
 #include <sstream>
 #include <vector>
 
-/*void Ratings::setRating(int rating) {
-    std::string songTitle;
-    int rating;
-    std::cout << "Enter the title of the song to set rating: ";
-    std::getline(std::cin, songTitle);
-
-    // Prompt the user to enter the rating
-    std::cout << "Enter the rating for the song (1-10): ";
-    std::cin >> rating;
-
-    // Clear the input buffer
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
-    // Find the song in the diary and set its rating
-    bool found = false;
-    auto& diarySongs = diary.getDiary();
-    for (auto& song : diarySongs) {
-        if (song.songName == songTitle) {
-            found = true;
-            setRating(rating);
-            std::cout << "Rating for song \"" << songTitle << "\" set to " << rating << std::endl;
-            break;
-        }
-    }
-
-    if (!found) {
-        std::cout << "Song \"" << songTitle << "\" not found in the diary." << std::endl;
-    }
-}
-
-void Ratings::getRating() {
-    std::string songTitle;
-    std::cout << "Enter the title of the song to get rating: ";
-    std::getline(std::cin, songTitle);
-
-    // Find the song in the diary and get its rating
-    bool found = false;
-    for (const auto& songRatingPair : ) {
-        if (songRatingPair.first == songTitle) {
-            found = true;
-            std::cout << "Rating for song \"" << songTitle << "\" is: " << songRatingPair.second << std::endl;
-            break;
-        }
-    }
-
-    if (!found) {
-        std::cout << "Song \"" << songTitle << "\" not found in the diary." << std::endl;
-    }
-} */
-
 void Ratings::setSongRating(SongCollection& collection, std::vector<Song>& Diary) {
     std::string songTitle;
     int rating;

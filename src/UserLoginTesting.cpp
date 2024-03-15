@@ -2,6 +2,9 @@
 #include "../header/UserProfile.h"
 #include "../header/UserStorage.h"
 #include "../header/UserAuthentication.h"
+#include "../header/Diary.h"
+#include "../header/ratings.h"
+#include "../header/SongCollection.h"
 #include <gtest/gtest.h>
 
 TEST(UserProfileTest, CheckGettersAndSetters) 
@@ -24,6 +27,7 @@ TEST(UserProfileTest, CheckGettersAndSetters)
     ASSERT_EQ(user.getLastName(), "Smith");
     ASSERT_EQ(user.getDOB(), "1991-02-02");
 }
+
 
 int main(int argc, char **argv) 
 {
