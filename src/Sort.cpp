@@ -2,6 +2,7 @@
 #include "../header/SongCollection.h"
 #include "../header/Diary.h"
 #include "../header/ratings.h"
+#include "../header/Recc.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -38,7 +39,11 @@ void Sort::promptAndSort(SongCollection& collection)
             std::transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
 
             if (userChoice == "1" || userChoice == "artist") {
-                sortByArtist(collection);
+                //sortByArtist(collection);
+                Diary userDiary;
+                Recc userRecc;
+                auto& recc = userRecc.getRecc();
+                userRecc.ReccBySong(collection, userDiary, recc);
                 isValidChoice = true;
             } else if (userChoice == "2" || userChoice == "album name") {
                 sortByAlbumName(collection);

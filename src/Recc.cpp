@@ -19,7 +19,7 @@ std::vector<Song>& Recc::getRecc(){
         return recc;
     }
 
-void Recc::ReccBySong(SongCollection& collection, Diary& UserDiary){
+void Recc::ReccBySong(SongCollection& collection, Diary& userDiary, std::vector<Song>& recc) {
     // first, its gonna go through the diary vector and stop everytime it finds a song rated at 8 or higher
     // then, everytime it stops, its going to look at the genre of the song
     // then, its gonna iterate through the RECC Vector (formerly a copy of the whole collection) and find a song with that same genre
@@ -36,7 +36,7 @@ void Recc::ReccBySong(SongCollection& collection, Diary& UserDiary){
     std::getline(std::cin, ratingLevel); 
 
     auto& allSongs = collection.getSongs();
-    auto& diarySongs = UserDiary.getDiary();
+    auto& diarySongs = userDiary.getDiary();
     bool found = false;
 
     for (const auto& song : diarySongs) 
@@ -66,7 +66,7 @@ void Recc::ReccBySong(SongCollection& collection, Diary& UserDiary){
 }
 
 
-void Recc::promptForRecc(SongCollection& collection, Diary& UserDiary)
+void Recc::promptForRecc(SongCollection& collection, Diary& userDiary, std::vector<Song>& recc)
 {
     std::string userChoice;
     bool isValidChoice = false;
@@ -88,7 +88,7 @@ void Recc::promptForRecc(SongCollection& collection, Diary& UserDiary)
                 //ReccByAlbum(collection);
                 isValidChoice = true;
             } else if (userChoice == "3" || userChoice == "song name") {
-                ReccBySong(collection, UserDiary);
+                ReccBySong(collection, userDiary, recc);
                 isValidChoice = true;
             } else if (userChoice == "4" || userChoice == "popularity") {
                 //ReccByPopularity(collection);

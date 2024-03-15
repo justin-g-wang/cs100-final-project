@@ -20,7 +20,6 @@ class Diary {
     public:
         Diary() : numSongs(0), numArtists(0), numAlbums(0) {}
 
-        std::vector<Song>& getDiarySongs();
         void createDiary();
         int getNumSongs();
         int getNumArtists();

@@ -225,7 +225,3 @@
         std::cout << "Artist \"" << artistName << "\" not found in diary." << std::endl;
     }
     }
-
-    std::vector<Song>& getDiarySongs() {
-        return diary;
-    }
