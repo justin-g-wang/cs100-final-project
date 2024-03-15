@@ -44,7 +44,18 @@ Dependency Inversion Principle (DIP): "We will add abstractions between high-lev
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ 
+<img width="507" alt="Screenshot 2024-03-15 at 12 32 13 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/6f9344e1-0b95-43f9-b1de-93754855952f">
+<img width="1119" alt="Screenshot 2024-03-15 at 12 30 36 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/7e12dc4b-48f1-4448-9b39-cf348fc5e36c">
+<img width="770" alt="Screenshot 2024-03-15 at 12 32 23 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/a3919e5b-d602-4e8f-b893-0060f6b47ade">
+<img width="453" alt="Screenshot 2024-03-15 at 12 32 32 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/9b3f3c0c-51db-434e-8fc3-68750853d19f">
+<img width="999" alt="Screenshot 2024-03-15 at 12 30 50 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/a3df2bd4-9aeb-4025-8dee-16c4896d95c9">
+<img width="510" alt="Screenshot 2024-03-15 at 12 32 38 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/793a5776-5a7a-4088-9689-c8d5d0aa9f49">
+<img width="687" alt="Screenshot 2024-03-15 at 12 33 19 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/9bdb739b-0ba0-4353-b1f6-0aa93e105338">
+<img width="458" alt="Screenshot 2024-03-15 at 12 33 36 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/28088294-7410-46fc-9904-b580eaaba2ad">
+<img width="1123" alt="Screenshot 2024-03-15 at 12 36 42 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/87f9c943-0619-44d0-85a0-303bebb1a5d5">
+<img width="422" alt="Screenshot 2024-03-15 at 12 36 52 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/9cabe395-375c-4e8c-bfb9-20982ea09fda">
+ 
  ## Installation/Usage
  To install this app and run the application, this Github repository shoud be cloned into an IDE that supports C++ programming. After you clone it, you need to run `cmake .`, `make` , `./SongCollection`. After running `./`SongCollection`, you should be able to find login in, rate music and get recommendations. 
  ## Testing
