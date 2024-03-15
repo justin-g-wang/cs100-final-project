@@ -8,5 +8,5 @@
          void sortBySongName(SongCollection& collection);
          void sortByPopularity(SongCollection& collection);
          void sortByGenre(SongCollection& collection);
-         void promptAndSort(SongCollection& collection);
+         void promptAndSort(SongCollection& collection, const std::string& username);
     };

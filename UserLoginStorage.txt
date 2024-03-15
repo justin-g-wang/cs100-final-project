@@ -1,4 +1,15 @@
+user3 newPassword User Three 1993-03-03
+charlie initialPass Charlie Chaplin 1889-04-16
+daveDev newSecurePassword Dave Developer 1995-03-12
+alice01 password123 Alice Wonderland 2001-04-01
 1 11111111 1 1 1111-11-11
-ILoveMusic Password12345 Hassan Fawaz 2001-12-12
-
 deez Ilovenuts1 Justin wang 2046-10-10
+ILoveMusic Password12345 Hassan Fawaz 2001-12-12
+user4 password4 User Four 1994-04-04
+newUser password123 Test User 2000-01-01
+alice password Alice Example 1995-05-05
+bob99 securePass Bob Builder 1999-12-31
+eve01 password123 Eve Example 1980-07-15
+bob 12345 Bob Builder 1990-01-01
+eve abcde Eve Example 1992-02-02
+111 11111111 1 1 1111-11-11

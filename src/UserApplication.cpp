@@ -80,20 +80,26 @@ void UserApplication::registerUser()
             std::cout << "Invalid date of birth format. Please use YYYY-MM-DD format with numbers only." << std::endl;
         }
     }
-
+    
     UserProfile userProfile(firstName, lastName, dob);
     storage.saveUser(username, password, userProfile);
 }
 
-bool UserApplication::loginUser() 
-{
+bool UserApplication::loginUser() {
     std::string username, password;
     std::cout << "Enter username: ";
     std::cin >> username;
     std::cout << "Enter password: ";
     std::cin >> password;
 
-    return authentication.authenticate(username, password);
+    if (authentication.authenticate(username, password)) {
+        isLoggedIn = true;
+        currentUserUsername = username; 
+        return true;
+    } else {
+        std::cout << "Login Failed. Please Check Your Username And Password" << std::endl;
+        return false;
+    }
 }
 
 bool UserApplication::getLoginStatus() const 
@@ -182,3 +188,9 @@ void UserApplication::resetUserPassword()
         std::cout << "Username Does Not Exist.\n";
     }
 }
+
+
+std::string UserApplication::getCurrentUsername() const {
+    return currentUserUsername; 
+}
+

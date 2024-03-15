@@ -27,8 +27,8 @@ class Diary {
         std::vector<Song>& getDiary();
         void addSong(SongCollection& collection);
         void viewDiary(SongCollection& collection);
-        void saveToFile() const;
-        void loadFromFile();
+        void saveToFile(const std::string& username) const;
+        void loadFromFile(const std::string& username);
         void addAlbum(SongCollection& collection);
         void addArtist(SongCollection& collection);
         void removeSong(SongCollection& collection);

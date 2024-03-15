@@ -10,14 +10,14 @@
 
 
 
-void Sort::promptAndSort(SongCollection& collection) 
+void Sort::promptAndSort(SongCollection& collection, const std::string& username) 
 {
     std::string userChoice;
     bool isValidChoice = false;
     Diary myDiary;
     Ratings ratings;
-
-    myDiary.loadFromFile();
+    myDiary.loadFromFile(username);
+    
 
         // while (!isValidChoice) {
         while (true) {
@@ -31,7 +31,7 @@ void Sort::promptAndSort(SongCollection& collection)
             std::cin >> userChoice;
             
              if (userChoice == "6") {
-                myDiary.saveToFile();
+                myDiary.saveToFile(username);
                 break;
             }
 
@@ -58,7 +58,7 @@ void Sort::promptAndSort(SongCollection& collection)
 
         }
 
-        myDiary.saveToFile();
+        myDiary.saveToFile(username);
     }
 
 
