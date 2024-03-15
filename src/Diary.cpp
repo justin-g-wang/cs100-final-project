@@ -36,9 +36,7 @@
     void Diary::viewDiary(SongCollection& collection) {
         std::cout << "===== DIARY =====" << std::endl;
         for (auto &song : diary) {
-            std::cout << "Artist: " << song.artist << ", Album: " << song.albumName 
-            << ", Title: " << song.songName << ", Genre: " << song.genre 
-            << ", Rating: " << song.rating << std::endl;
+            std::cout << "Title: " << song.songName << ", Artist: " << song.artist << ", Album: " << song.albumName << ", Rating: " << song.rating << std::endl;
         }
         std::cout << std::endl;
     }
@@ -61,12 +59,11 @@
             {
                 found = true;
                 numSongs++;
-                auto hello = Song(song.artist, song.albumName, song.songName,"",song.genre,""); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, song.songName, song.genre, "", ""); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << "Song: " << song.songName
                         << ", Album: " << song.albumName
-                        << ", Artist: " << song.artist 
-                        << ", Genre: " << song.genre << std::endl;
+                        << ", Artist: " << song.artist << std::endl;
                         
                 std::cout << songTitle << " added to the diary!" << std::endl;
                 break;
@@ -99,7 +96,6 @@ void Diary::loadFromFile(const std::string& username) {
         std::cerr << "Unable to open file for reading: " << filename << std::endl;
         return;
     }
-   // diary.clear();
         std::string line; 
         while (std::getline(file, line)) {
             std::stringstream ss(line);
@@ -108,12 +104,10 @@ void Diary::loadFromFile(const std::string& username) {
             std::getline(ss, artist, ',');
             std::getline(ss, albumName, ',');
             std::getline(ss, songName, ',');
+            // std::getline(ss, popularity, ',');
             std::getline(ss, genre, ',');
             std::getline(ss, rating);
             
-            if (rating.empty()) {
-            rating = "no rating"; 
-    }
             Song song(artist, albumName, songName, popularity, genre, rating);
             diary.push_back(song);
         }
