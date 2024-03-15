@@ -53,9 +53,10 @@ void Sort::promptAndSort(SongCollection& collection, const std::string& username
             else if (userChoice == "5" || userChoice == "genre") {
                 sortByGenre(collection);
                 isValidChoice = true;
-                myDiary.addSong(collection);
+                // myDiary.addSong(collection);
+                // myDiary.viewDiary(collection);
+                // ratings.setSongRating(collection, myDiary.getDiary());
                 myDiary.viewDiary(collection);
-                ratings.setSongRating(collection, myDiary.getDiary());
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }
