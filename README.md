@@ -29,9 +29,13 @@ Upon opening the website, users will have to log in or create an account using t
 
 
 Single Responsibility Principle (SRP): UserStorage manages user data storage, UserProfile represents user information, UserAuthentication handles authentication, Diary manages song-related data for users, and Ratings manages ratings for songs, albums, and artists.
+
 Open/Closed Principle (OCP): The system is designed in a way that allows for extension without modification. For instance, if new functionalities related to user profiles or diary entries need to be added, new classes can be introduced without altering existing code, adhering to the OCP.
+
 Liskov Substitution Principle (LSP): This principle is not demonstrated, as there's no inheritance hierarchy among the classes. However, the principle could be applied in areas like extending UserProfile for different types of users or expanding the Diary class to support different types of diary entries, ensuring that subclasses could be used in place of their parent classes without altering the desirable properties of the program.
+
 Interface Segregation Principle (ISP): While not explicitly shown through interface usage , the principle is conceptually applied through focused class responsibilities, suggesting that if interfaces were used, they would likely be small and specific to avoid forcing any class to implement methods it doesn't use.
+
 Dependency Inversion Principle (DIP): We do not fully adhere to the Dependency Inversion Principle (DIP), as UserAuthentication directly depends on the concrete class UserStorage. To address this and align with DIP, we plan to introduce an interface for user storage operations, allowing UserAuthentication to depend on this abstraction instead of the concrete implementation, thus decoupling high-level and low-level modules.
  
  ## Screenshots
