@@ -55,7 +55,11 @@ Dependency Inversion Principle (DIP): "We will add abstractions between high-lev
 <img width="458" alt="Screenshot 2024-03-15 at 12 33 36 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/28088294-7410-46fc-9904-b580eaaba2ad">
 <img width="1123" alt="Screenshot 2024-03-15 at 12 36 42 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/87f9c943-0619-44d0-85a0-303bebb1a5d5">
 <img width="422" alt="Screenshot 2024-03-15 at 12 36 52 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/9cabe395-375c-4e8c-bfb9-20982ea09fda">
- 
+<img width="893" alt="Screenshot 2024-03-15 at 12 45 15 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/4c4f71d7-ef89-4e20-b9bb-537e61ba61a8">
+<img width="424" alt="Screenshot 2024-03-15 at 12 45 31 PM" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156469475/dd8836a6-0ee3-49b6-bc83-c2baaf96475c">
+
+
+
  ## Installation/Usage
  To install this app and run the application, this Github repository shoud be cloned into an IDE that supports C++ programming. After you clone it, you need to run `cmake .`, `make` , `./SongCollection`. After running `./`SongCollection`, you should be able to find login in, rate music and get recommendations. 
  ## Testing
