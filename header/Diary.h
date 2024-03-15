@@ -12,9 +12,6 @@ class Diary {
         int numSongs;
         int numArtists;
         int numAlbums;
-        std::string songRecs; //might be vector?
-        std::string albumRecs; //might be vector?
-        std::string artistRecs; //might be vector?
         std::vector<Song> diary;
 
     public:
@@ -25,6 +22,7 @@ class Diary {
         int getNumArtists();
         int getNumAlbums();
         std::vector<Song>& getDiary();
+        void setSong(Song& userSong);
         void addSong(SongCollection& collection);
         void viewDiary(SongCollection& collection);
         void saveToFile() const;

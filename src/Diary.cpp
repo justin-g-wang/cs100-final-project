@@ -45,6 +45,10 @@
         return diary;
     }
 
+    void Diary::setSong(Song& userSong) {
+        diary.push_back(userSong);
+    }
+
     void Diary::addSong(SongCollection& collection){
         std::string songTitle;
         std::cout << "Enter the title of the song: ";
