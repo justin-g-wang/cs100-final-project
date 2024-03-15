@@ -35,6 +35,9 @@ class Diary {
         void removeAlbum(SongCollection& collection);
         void removeArtist(SongCollection& collection);
 
+        void addSongDirectly(const Song& song);
+        void removeSongDirectly(const std::string& songName);
+        void addAlbumDirectly(const std::string& albumName, const std::vector<Song>& songsInAlbum);
 };
 
 #endif

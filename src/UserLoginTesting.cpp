@@ -3,6 +3,8 @@
 #include "../header/UserStorage.h"
 #include "../header/UserAuthentication.h"
 #include "../header/PasswordRecovery.h"
+#include "../header/ratings.h"
+#include "../header/Diary.h"
 #include <gtest/gtest.h>
 #include <iostream>
 #include <fstream>
@@ -60,6 +62,17 @@ TEST(UserApplicationTest, ValidatePassword) {
     ASSERT_FALSE(app.isPasswordValid("short"));
     ASSERT_FALSE(app.isPasswordValid("longbutnonumbers"));
     ASSERT_TRUE(app.isPasswordValid("validPassword1"));
+}
+
+TEST(RatingsTest, SetAndGetSongRating) {
+SongCollection collection;
+Diary diary;
+    Ratings ratings;
+    collection.readSongsFromCSV("NoNumberingDataSet.csv"); 
+    ASSERT_FALSE(collection.getSongs().empty()); 
+    Song firstSong = collection.getSongs().front();
+    diary.addSongDirectly(firstSong);
+    int rating = 8; 
 }
 
 TEST(UserApplicationTest, ValidateDateOfBirth) {
@@ -145,6 +158,48 @@ TEST(UserAuthenticationTest, InvalidateUserWithIncorrectCredentials) {
     UserAuthentication auth(storage);
     storage.saveUser("eve", "abcde", UserProfile("Eve", "Example", "1992-02-02"));
     ASSERT_FALSE(storage.validateUser("eve", "wrongpassword"));
+}
+
+TEST(DiaryTest, AddAndRetrieveSongs) {
+    SongCollection collection;
+    Diary diary;
+    collection.readSongsFromCSV("NoNumberingDataSet.csv"); 
+    ASSERT_FALSE(collection.getSongs().empty()); 
+    Song firstSong = collection.getSongs().front();
+    diary.addSongDirectly(firstSong);
+    ASSERT_EQ(diary.getNumSongs(), 1);
+    std::vector<Song> songsInDiary = diary.getDiary();
+    ASSERT_EQ(songsInDiary.front().songName, firstSong.songName); 
+    
+}
+
+TEST(DiaryTest, AddAlbum) {
+    SongCollection collection;
+    Diary diary;
+    collection.readSongsFromCSV("NoNumberingDataSet.csv"); 
+
+    ASSERT_FALSE(collection.getSongs().empty());
+    std::string targetAlbumName = collection.getSongs().front().albumName;
+    std::vector<Song> songsInTargetAlbum;
+    for (const auto& song : collection.getSongs()) {
+        if (song.albumName == targetAlbumName) {
+            songsInTargetAlbum.push_back(song);
+        }
+    }
+
+    ASSERT_FALSE(songsInTargetAlbum.empty());
+}
+
+TEST(DiaryTest, RemoveSong) {
+    SongCollection collection;
+    Diary diary;
+    collection.readSongsFromCSV("NoNumberingDataSet.csv");
+    ASSERT_FALSE(collection.getSongs().empty());
+    Song firstSong = collection.getSongs().front();
+    diary.addSongDirectly(firstSong);
+    ASSERT_EQ(diary.getNumSongs(), 1);
+    diary.removeSongDirectly(firstSong.songName);
+    ASSERT_EQ(diary.getNumSongs(), 0);
 }
 
 int main(int argc, char** argv) {

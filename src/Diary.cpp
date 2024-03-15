@@ -228,3 +228,28 @@ void Diary::loadFromFile(const std::string& username) {
         std::cout << "Artist \"" << artistName << "\" not found in diary." << std::endl;
     }
     }
+
+    void Diary::addSongDirectly(const Song& song) {
+    diary.push_back(song);
+    numSongs++;
+}
+
+void Diary::addAlbumDirectly(const std::string& albumName, const std::vector<Song>& songsInAlbum) {
+    for (const auto& song : songsInAlbum) {
+        if (song.albumName == albumName) {
+            diary.push_back(song);
+        }
+    }
+    numAlbums++;
+}
+
+void Diary::removeSongDirectly(const std::string& songName) {
+    auto it = std::remove_if(diary.begin(), diary.end(), [&](const Song& song) {
+        return song.songName == songName;
+    });
+
+    if (it != diary.end()) {
+        diary.erase(it, diary.end());
+        numSongs--;
+    }
+}

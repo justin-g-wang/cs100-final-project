@@ -99,7 +99,6 @@ bool UserApplication::loginUser() {
         currentUserUsername = username; 
         return true;
     } else {
-        std::cout << "Login Failed. Please Check Your Username And Password" << std::endl;
         return false;
     }
 }
