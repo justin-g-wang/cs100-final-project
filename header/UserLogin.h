@@ -12,6 +12,7 @@ private:
 public:
     void registerUsers(const std::string& username, const std::string& password);
     bool loginUser(const std::string& username, const std::string& password);
+    void writeCurrentUserToFile(const std::string& username);
     void saveUsersToFile() const;
     void loadUsersFromFile();
 };

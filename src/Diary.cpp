@@ -75,24 +75,28 @@
         }
     }
     
-    void Diary::saveToFile() const {
-        // askForUserLogin userLogin;
-        // std::string username = userLogin.getUsername();
-        std::ofstream file("diary.txt"); // "diary_bob.txt" --> "diary_" + username + ".txt", do the same for loadToFile()
+    void Diary::saveToFile(const std::string& username) const {
+    std::string filename = "diary_" + username + ".txt";
+    std::ofstream file(filename);
+    if (!file) {
+        std::cerr << "Unable to open file for writing: " << filename << std::endl;
+        return;
+    }
     for (const auto& song : diary) {
-        file << song.artist << ","
-             << song.albumName << ","
-             << song.songName << ","
-             << song.popularity << ","
-             << song.genre << ","
-             << song.rating << std::endl;
+        file << song.artist << "," << song.albumName << "," << song.songName << "," << song.genre << "," << song.rating << std::endl;
     }
-    file.close();
-    }
+}
 
-    void Diary::loadFromFile() {
-        std::ifstream file("diary.txt");
-        std::string line;
+
+
+void Diary::loadFromFile(const std::string& username) {
+    std::string filename = "diary_" + username + ".txt";
+    std::ifstream file(filename);
+    if (!file) {
+        std::cerr << "Unable to open file for reading: " << filename << std::endl;
+        return;
+    }
+        std::string line; 
         while (std::getline(file, line)) {
             std::stringstream ss(line);
             std::string artist, albumName, songName, popularity, genre, rating;
@@ -100,7 +104,7 @@
             std::getline(ss, artist, ',');
             std::getline(ss, albumName, ',');
             std::getline(ss, songName, ',');
-            std::getline(ss, popularity, ',');
+            // std::getline(ss, popularity, ',');
             std::getline(ss, genre, ',');
             std::getline(ss, rating);
             
