@@ -4,6 +4,7 @@
 #include "../header/UserStorage.h"
 #include "../header/UserAuthentication.h"
 #include "../header/UserProfile.h"
+#include "../header/Diary.h"
 
 class UserApplication {
 private:

@@ -83,6 +83,8 @@ void UserApplication::registerUser()
     
     UserProfile userProfile(firstName, lastName, dob);
     storage.saveUser(username, password, userProfile);
+    Diary userDiary;
+    userDiary.saveToFile(username);
 }
 
 bool UserApplication::loginUser() {

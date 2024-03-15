@@ -49,9 +49,13 @@ void Sort::promptAndSort(SongCollection& collection, const std::string& username
             } else if (userChoice == "4" || userChoice == "popularity") {
                 sortByPopularity(collection);
                 isValidChoice = true;
-            } else if (userChoice == "5" || userChoice == "genre") {
+            }
+            else if (userChoice == "5" || userChoice == "genre") {
                 sortByGenre(collection);
                 isValidChoice = true;
+                myDiary.addSong(collection);
+                myDiary.viewDiary(collection);
+                ratings.setSongRating(collection, myDiary.getDiary());
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }
