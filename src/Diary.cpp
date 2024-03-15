@@ -3,7 +3,6 @@
 #include "../header/Song.h"
 #include "../header/Sort.h"
 #include "../header/SongCollection.h"
-#include "../header/askForUserLogin.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -60,7 +59,7 @@
             {
                 found = true;
                 numSongs++;
-                auto hello = Song(song.artist, song.albumName, song.songName, song.genre, "NA", "NA"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, song.songName, song.genre, "", ""); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << "Song: " << song.songName
                         << ", Album: " << song.albumName
@@ -126,7 +125,7 @@
             {
                 found = true;
                 numAlbums++;
-                auto hello = Song(song.artist, song.albumName, "NA", "", "NA","NA"); // <---- Edit whatever here
+                auto hello = Song(song.artist, song.albumName, "", "", "",""); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << ", Album: " << song.albumName << std::endl;
                         
@@ -143,7 +142,7 @@
     
     void Diary::addArtist(SongCollection& collection){
         std::string artistName;
-        std::cout << "Enter the title of the Album: ";
+        std::cout << "Enter the name of the Artist: ";
         // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         std::getline(std::cin, artistName);
 
@@ -155,7 +154,7 @@
             {
                 found = true;
                 numAlbums++;
-                auto hello = Song(song.artist, song.albumName, song.songName, "PLACEHOLDER", "PLACEHOLDER", "PLACEHOLDER"); // <---- Edit whatever here
+                auto hello = Song(song.artist, "", "", "", "", ""); // <---- Edit whatever here
                 diary.push_back(hello);   
                 std::cout << ", Artist: " << song.artist << std::endl;
                         
