@@ -40,19 +40,35 @@ void Sort::promptAndSort(SongCollection& collection, const std::string& username
             if (userChoice == "1" || userChoice == "artist") {
                 sortByArtist(collection);
                 isValidChoice = true;
+                myDiary.addSong(collection);
+                myDiary.viewDiary(collection);
+                ratings.setSongRating(collection,myDiary.getDiary());
             } else if (userChoice == "2" || userChoice == "album name") {
                 sortByAlbumName(collection);
                 isValidChoice = true;
+                myDiary.addSong(collection);
+                myDiary.viewDiary(collection);
+                ratings.setSongRating(collection,myDiary.getDiary());
             } else if (userChoice == "3" || userChoice == "song name") {
                 sortBySongName(collection);
                 isValidChoice = true;
+                myDiary.addSong(collection);
+                myDiary.viewDiary(collection);
+                ratings.setSongRating(collection,myDiary.getDiary());
             } else if (userChoice == "4" || userChoice == "popularity") {
                 sortByPopularity(collection);
                 isValidChoice = true;
+                myDiary.addSong(collection);
+                myDiary.viewDiary(collection);
+                ratings.setSongRating(collection,myDiary.getDiary());
             }
             else if (userChoice == "5" || userChoice == "genre") {
                 sortByGenre(collection);
                 isValidChoice = true;
+                myDiary.addSong(collection);
+                myDiary.viewDiary(collection);
+                ratings.setSongRating(collection,myDiary.getDiary());
+
             } else {
                 std::cerr << "Invalid choice. Please try again." << std::endl;
             }
