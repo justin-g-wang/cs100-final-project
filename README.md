@@ -52,7 +52,7 @@ Dependency Inversion Principle (DIP): "We will add abstractions between high-lev
 
 
  ## Installation/Usage
- To install this app and run the application, this Github repository shoud be cloned into an IDE that supports C++ programming. After you clone it, you need to run `cmake .`, `make` , `./SongCollection`. After running `./`SongCollection`, you should be able to find login in, rate music and get recommendations. To run the google tests , you will have to run the command `./`googleTest` . To run valgrind you must use `$ valgrind --leak-check=full ./example1`.
+ To install this app and run the application, this Github repository shoud be cloned into an IDE that supports C++ programming. After you clone it, you need to run `cmake .`, `make` , `./SongCollection`. After running `./SongCollection`, you should be able to find login in, rate music and get recommendations. To run the google tests , you will have to run the command `./googleTest` . To run valgrind you must use `$ valgrind --leak-check=full ./example1`.
  ## Testing
 Our project was tested with Google Test. Everyone who wrote a part of the project also made tests to check if their part worked correctly. Then, they would create a pull request. Another team member would look at what was added and decide if it was okay. This way, we made sure everything worked well before adding it to the main project. We also used valgrind to check for memory leaks.
  
