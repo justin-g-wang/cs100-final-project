@@ -10,10 +10,10 @@ Authors: \<[Aakif Iqbal](https://github.com/aakifiq)\>, \<[Justin Wang](https://
   * What will be the input/output of your project?
 
 * The UI is based on terminal, therefore the user will need to enter numbers for them to move around through the UI. More inputs will be the user’s personal information in order for them to create a account and  profile. This will include first and last name, date of birth, username and password. The user can also enter the name of a song, genres, artists, albums, and even popularity to find specific songs. They will also be able to rate a song between 0- 10.
-The output will be the user having their own custom profile which has a diary of past ratings for all the songs or albums they have rated. Furthermore, they will see a list of songs and albums based on their recommendations.
+*The output will be the user having their own custom profile which has a diary of past ratings for all the songs or albums they have rated. Furthermore, they will see a list of songs and albums based on their recommendations.
 
-  * What are the features that the project provides?
-  Song Notes is a music discovery app. It organizes songs and albums into genres and subgenres, simplifying your search for preferred music. Its standout feature is a recommendation system: input a favorite song or artist, and you'll get a list of similar music, using algorithms considering genre, artist, and album. Additionally, you can search music by artist and genre, or filter by release date or popularity. A key aspect of Song Notes is its rating system, where users can rate songs and albums. The ratings you give to songs will adjust future recommendations. It will aslo include a login system, where the user can login into his own profile where all his past rating amd recommendations will be stored.
+* What are the features that the project provides?
+Song Notes is a music discovery app. It organizes songs and albums into genres and subgenres, simplifying your search for preferred music. Its standout feature is a recommendation system: input a favorite song or artist, and you'll get a list of similar music, using algorithms considering genre, artist, and album. Additionally, you can search music by artist and genre, or filter by release date or popularity. A key aspect of Song Notes is its rating system, where users can rate songs and albums. The ratings you give to songs will adjust future recommendations. It will aslo include a login system, where the user can login into his own profile where all his past rating amd recommendations will be stored.
 
 ## User Interface Specification
 ### Navigation Diagram
