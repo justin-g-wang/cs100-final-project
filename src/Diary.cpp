@@ -88,7 +88,7 @@
     for (const auto& song : diary) {
         file << song.artist << "," << song.albumName << "," << song.songName << "," << song.genre << "," << song.rating << std::endl;
     }
-
+}
 
 
 
