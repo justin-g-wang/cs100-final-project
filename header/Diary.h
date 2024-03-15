@@ -16,11 +16,10 @@ class Diary {
         std::string albumRecs; //might be vector?
         std::string artistRecs; //might be vector?
         std::vector<Song> diary;
-        std::string username;
 
     public:
         Diary() : numSongs(0), numArtists(0), numAlbums(0) {}
-        Diary(const std::string& username) : username(username) {} // Constructor
+
         void createDiary();
         int getNumSongs();
         int getNumArtists();
@@ -28,8 +27,8 @@ class Diary {
         std::vector<Song>& getDiary();
         void addSong(SongCollection& collection);
         void viewDiary(SongCollection& collection);
-        void saveToFile() const;
-        void loadFromFile();
+        void saveToFile(const std::string& username) const;
+        void loadFromFile(const std::string& username);
         void addAlbum(SongCollection& collection);
         void addArtist(SongCollection& collection);
         void removeSong(SongCollection& collection);

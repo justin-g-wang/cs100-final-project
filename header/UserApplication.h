@@ -4,13 +4,14 @@
 #include "../header/UserStorage.h"
 #include "../header/UserAuthentication.h"
 #include "../header/UserProfile.h"
+#include "../header/Diary.h"
 
-class UserApplication 
-{
+class UserApplication {
 private:
     UserStorage storage;
     UserAuthentication authentication;
     bool isLoggedIn;
+    std::string currentUserUsername; 
 
 public:
     UserApplication();
@@ -21,6 +22,8 @@ public:
     bool isPasswordValid(const std::string& password);
     bool isDOBValid(const std::string& dob);
     void resetUserPassword();
+    std::string getCurrentUsername() const; 
 };
+
 
 #endif // USERAPPLICATION_H
