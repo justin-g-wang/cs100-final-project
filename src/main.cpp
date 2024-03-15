@@ -1,7 +1,6 @@
 #include "../header/SongCollection.h"
 #include "../header/Sort.h"
 #include "../header/UserLogin.h"
-#include "../header/askForUserLogin.h"
 #include "../header/Diary.h"
 #include "../header/UserApplication.h"
 
