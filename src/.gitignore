@@ -7,3 +7,7 @@ cmake_install.cmake
 CTestTestfile.cmake
 googleTest
 lib/
+CTestTestfile.cmake
+lib/libgmock.a
+lib/libgmock_main.a
+lib/libgtest.a
