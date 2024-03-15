@@ -18,6 +18,9 @@ void Sort::promptAndSort(SongCollection& collection)
     Diary myDiary;
     Ratings ratings;
 
+    Recc userRecc;
+    userRecc.loadFromFile();
+
     myDiary.loadFromFile();
 
         // while (!isValidChoice) {
@@ -33,18 +36,15 @@ void Sort::promptAndSort(SongCollection& collection)
             
              if (userChoice == "6") {
                 myDiary.saveToFile();
+                userRecc.saveToFile();
                 break;
             }
 
             std::transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
 
             if (userChoice == "1" || userChoice == "artist") {
-                //sortByArtist(collection);
-                Diary userDiary;
-                Recc userRecc;
-                auto& recc = userRecc.getRecc();
-                userRecc.ReccBySong(collection, userDiary, recc);
-                isValidChoice = true;
+                sortByArtist(collection);
+
             } else if (userChoice == "2" || userChoice == "album name") {
                 sortByAlbumName(collection);
                 isValidChoice = true;
