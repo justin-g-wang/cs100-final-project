@@ -10,7 +10,6 @@ private:
 
 public:
     void setUsername(const std::string& name); 
-    std::string getUsername(); 
     bool promptUser();
 };
 

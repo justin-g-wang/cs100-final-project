@@ -11,6 +11,7 @@ class Ratings {
         int albumRating;
         int artistRating;
         int rating;
+        std::string username; 
 
     public:
         //void setRating(int rating);

@@ -34,6 +34,7 @@
         return numAlbums;
     }
 
+   
     void Diary::viewDiary(SongCollection& collection) {
         std::cout << "===== DIARY =====" << std::endl;
         for (auto &song : diary) {
@@ -92,7 +93,7 @@
     }
 
     void Diary::loadFromFile() {
-        std::ifstream file("diary.txt");
+        std::ifstream file("diary_" + username + ".txt");
         std::string line;
         while (std::getline(file, line)) {
             std::stringstream ss(line);
