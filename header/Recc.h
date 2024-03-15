@@ -8,13 +8,16 @@
         std::vector<Song> recc;
     public:
         std::vector<Song>& getRecc();
-        void viewRecc(SongCollection& collection, std::vector<Song>& diary);
+        void addSong(const Song userSong);
+        void viewRecc(SongCollection& collection);
         void ReccByArtist(SongCollection& collection);
         void ReccByAlbum(SongCollection& collection);
-        void ReccBySong(SongCollection& collection, Diary& userDiary, std::vector<Song>& recc);
+        void ReccBySong(SongCollection& collection, Diary& userDiary);
         void ReccByPopularity(SongCollection& collection);
         void ReccByGenre(SongCollection& collection);
         void promptForRecc(SongCollection& collection, Diary& userDiary, std::vector<Song>& recc);
+        void saveToFile() const;
+        void loadFromFile();
     };
 
 #endif

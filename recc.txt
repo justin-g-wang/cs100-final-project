@@ -1,0 +1,20 @@
+Arctic Monkeys,AM,I Wanna Be Yours,92,rock,0
+The Neighbourhood,I Love You.,Sweater Weather,93,rock,0
+OneRepublic,"I Ain’t Worried (Music From The Motion Picture ""Top Gun: Maverick"")",I Ain't Worried,96,rock,0
+Faridkot;Amar Jalal,Nasha (Equals Sessions) - Single,Nasha (Equals Sessions),70,rock,0
+Jaymes Young,Feel Something,Infinity,85,rock,0
+The Local Train,Aalas Ka Pedh,Choo Lo,67,rock,0
+Christina Perri,A Thousand Years,A Thousand Years,81,rock,0
+Kate Bush,Hounds Of Love,Running Up That Hill (A Deal With God),90,rock,0
+Imagine Dragons,Evolve,Thunder,85,rock,0
+Imagine Dragons,Evolve,Believer,88,rock,0
+Måneskin,Chosen,Beggin',86,rock,0
+OneRepublic,Native,Counting Stars,83,rock,0
+AJR,OK ORCHESTRA,World's Smallest Violin,80,rock,0
+Imagine Dragons,Evolve,Whatever It Takes,81,rock,0
+Imagine Dragons,Night Visions,Demons,84,rock,0
+Arctic Monkeys,AM,I Wanna Be Yours,92,rock,0
+The Neighbourhood,I Love You.,Sweater Weather,93,rock,0
+OneRepublic,"I Ain’t Worried (Music From The Motion Picture ""Top Gun: Maverick"")",I Ain't Worried,96,rock,0
+Faridkot;Amar Jalal,Nasha (Equals Sessions) - Single,Nasha (Equals Sessions),70,rock,0
+Jaymes Young,Feel Something,Infinity,85,rock,0
