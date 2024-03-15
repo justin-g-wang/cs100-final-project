@@ -3,7 +3,6 @@
 #include "../header/Song.h"
 #include "../header/Sort.h"
 #include "../header/SongCollection.h"
-#include "../header/askForUserLogin.h"
 #include <iostream>
 #include <string>
 #include <cstring>
