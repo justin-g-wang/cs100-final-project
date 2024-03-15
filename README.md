@@ -22,7 +22,9 @@ https://drive.google.com/file/d/13ZGPLVQwXzsvixa0AvmvoHHTO-zG-gg3/view?usp=shari
 Users will have to log in or create an account using their personal information if they don’t have one. Once they've logged in,they will be brought to a page where they can choose to rate a song or get a song recommended to them. If they choose to rate a song, it will present them with options to search for a song. You can search by genre, album, artist, and etc. After they find the song they want, they can give it a rating between 0-10. It will then reopen up the screen where they choose to rate, recommend or exit. If they chose recommend, it will recommend them a song. If they exit, it will exit.
 
 ### Class Diagram
-<img width="544" alt="image" src="https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/127655051/a0d5ef5d-86e3-4815-b396-c085aa737b00">
+
+![NEWCLASSDIAGRAM](https://github.com/cs100/final-project-jwang798-hfawa001-feshe001-aiqba016/assets/156482673/983af09c-4ccc-48d7-b482-a7a085267bc6)
+
 
 
 * The  starting class that we will be using is the userLogin class. This is because everything that we are doing starts from Logging in. They create their account which gets stored into a file. The UserApplication class interacts directly with UserStorage for user management and UserAuthentication for login procedures. It depends on: UserStorage, UserAuthentication, and indirectly on UserProfile through UserStorage The UserStorage class has composition with UserProfile because it manages user data persistently. It also depends on UserProfile. The UserProfle class represents individual user data but it is used within UserStorage. The UserAuthentication class uses UserStorage to verify user credentials and depends on UserStorage. The Diary class depends on SongCollection and Song for managing diary entires related to songs, albums, and artists. It is associated with the UserApplication to manage user-specific diaries. The Ratings class depends on Diary and indirectly on SongCollection and Song for managing and retrieving ratings. It is also associated with Diary when retrieving the user-specific diary. 
