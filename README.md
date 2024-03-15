@@ -8,8 +8,7 @@ Authors: \<[Aakif Iqbal](https://github.com/aakifiq)\>, \<[Justin Wang](https://
   * What languages/tools/technologies do you plan to use?
   In developing SoundNotes, our music discovery app, we're using C++. Our user interface is based on the terminal focusing on simplicity and user-friendliness. We're also utilizing GitHub for version control and collaboration. Lastly, we integrating a csv file consisting of over 100,000 songs for accessing a wide range of music and metadata, crucial for our app's recommendation feature. 
   * What will be the input/output of your project?
-
-* The UI is based on terminal, therefore the user will need to enter numbers for them to move around through the UI. More inputs will be the user’s personal information in order for them to create a account and  profile. This will include first and last name, date of birth, username and password. The user can also enter the name of a song, genres, artists, albums, and even popularity to find specific songs. They will also be able to rate a song between 0- 10.
+The UI is based on terminal, therefore the user will need to enter numbers for them to move around through the UI. More inputs will be the user’s personal information in order for them to create a account and  profile. This will include first and last name, date of birth, username and password. The user can also enter the name of a song, genres, artists, albums, and even popularity to find specific songs. They will also be able to rate a song between 0- 10.
 *The output will be the user having their own custom profile which has a diary of past ratings for all the songs or albums they have rated. Furthermore, they will see a list of songs and albums based on their recommendations.
 
 * What are the features that the project provides?
