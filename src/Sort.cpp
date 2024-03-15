@@ -12,32 +12,32 @@
 
 void Sort::promptAndSort(SongCollection& collection, const std::string& username) 
 {
-    std::string userChoice;
-    bool isValidChoice = false;
-    Diary myDiary;
-    Ratings ratings;
-    myDiary.loadFromFile(username);
-    
+std::string userChoice;
+bool isValidChoice = false;
+Diary myDiary;
+Ratings ratings;
+myDiary.loadFromFile(username);
 
-        // while (!isValidChoice) {
-        while (true) {
-            std::cout << "Enter your choice for sorting: \n"
-                      << "1. Artist\n"
-                      << "2. Album Name\n"
-                      << "3. Song Name\n"
-                      << "4. Popularity\n"
-                      << "5. Genre\n"
-                      << "6. Quit\n";
-            std::cin >> userChoice;
-            
-             if (userChoice == "6") {
-                myDiary.saveToFile(username);
-                break;
-            }
 
-            std::transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
+    // while (!isValidChoice) {
+    while (true) {
+        std::cout << "Enter your choice for sorting: \n"
+                    << "1. Artist\n"
+                    << "2. Album Name\n"
+                    << "3. Song Name\n"
+                    << "4. Popularity\n"
+                    << "5. Genre\n"
+                    << "6. Quit\n";
+        std::cin >> userChoice;
+        
+            if (userChoice == "6") {
+            myDiary.saveToFile(username);
+            break;
+        }
 
-            if (userChoice == "1" || userChoice == "artist") {
+        std::transform(userChoice.begin(), userChoice.end(), userChoice.begin(), ::tolower);
+        
+        if (userChoice == "1" || userChoice == "artist") {
                 sortByArtist(collection);
                 isValidChoice = true;
                 myDiary.addSong(collection);
@@ -77,6 +77,7 @@ void Sort::promptAndSort(SongCollection& collection, const std::string& username
 
         myDiary.saveToFile(username);
     }
+     
 
 
 
